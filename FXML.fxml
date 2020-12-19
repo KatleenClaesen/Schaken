@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="900.0" prefWidth="800.0" style="-fx-background-color: powderblue;" styleClass="black" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <TilePane id="1A" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="1B" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="1C" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="1D" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="1E" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="1F" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="1G" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="1H" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="2A" layoutX="100.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="2B" layoutX="100.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="2C" layoutX="100.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="2D" layoutX="100.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="2E" layoutX="100.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="2F" layoutX="100.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="2G" layoutX="100.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="2H" layoutX="100.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="3A" layoutX="200.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="3B" layoutX="200.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="3C" layoutX="200.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="3D" layoutX="200.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="3E" layoutX="200.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="3F" layoutX="200.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="3G" layoutX="200.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="3H" layoutX="200.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="4A" layoutX="300.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" styleClass="black" />
+      <TilePane id="4B" layoutX="300.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="4C" layoutX="300.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="4D" layoutX="300.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="4E" layoutX="300.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="4F" layoutX="300.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="4G" layoutX="300.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="4H" layoutX="300.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="5A" layoutX="400.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="5B" layoutX="400.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="5C" layoutX="400.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="5D" layoutX="400.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="5E" layoutX="400.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="5F" layoutX="400.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="5G" layoutX="400.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="5H" layoutX="400.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="6A" layoutX="500.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="6B" layoutX="500.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="6C" layoutX="500.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="6D" layoutX="500.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="6E" layoutX="500.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="6F" layoutX="500.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="6G" layoutX="500.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="6H" alignment="CENTER" layoutX="500.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="7A" layoutX="600.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="7B" layoutX="600.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="7C" layoutX="600.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="7D" layoutX="600.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="7E" layoutX="600.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="7F" layoutX="600.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="7G" layoutX="600.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="7H" layoutX="600.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="8A" layoutX="700.0" layoutY="800.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="8B" layoutX="700.0" layoutY="700.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="8C" layoutX="700.0" layoutY="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="8D" layoutX="700.0" layoutY="500.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="8E" layoutX="700.0" layoutY="400.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="8F" layoutX="700.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="8G" layoutX="700.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
+      <TilePane id="8H" layoutX="700.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
+      <TilePane id="easteregg" layoutY="99.0" prefHeight="2.0" prefWidth="800.0" style="-fx-background-color: black;" />
+      <Button id="reset" mnemonicParsing="false" style="-fx-background-color: red;" text="reset" />
+      <Button id="start" layoutX="300.0" layoutY="400.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: lime;" text="Start">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+      <TextFlow id="Kleuraanzet" layoutX="300.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: grey;" />
+      <AnchorPane id="Wit" layoutX="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: bisque;" />
+      <AnchorPane id="Zwart" layoutX="600.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: bisque;" />
+      <TilePane id="background" blendMode="ADD" prefHeight="100.0" prefWidth="800.0" />
+   </children>
+</AnchorPane>
