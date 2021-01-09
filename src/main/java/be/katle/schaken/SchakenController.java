@@ -5,8 +5,8 @@
  */
 package be.katle.schaken;
 
-import Schaken.model.Pionnen;
-import Schaken.model.Schaken;
+import Stukken.model.Pionnen;
+import Stukken.model.Schaken;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,8 +14,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import view.PionnenView;
-import view.SchakenView;
+import view.Stukken.PionnenView;
+import view.Stukken.SchakenView;
 import javafx.event.ActionEvent;
 import javafx.util.Pair;
 
@@ -136,9 +136,10 @@ public class SchakenController {
         modelPion.reset();
         update();
     }
-    private void test2(){
+    /**private void test2(){
         Pair<int,int> p = new Pair(mouseX,mouseY)
                 1 getKey
                         2 getValue
     }
+    */
 }

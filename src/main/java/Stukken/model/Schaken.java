@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Schaken.model;
+package Stukken.model;
 
 /**
  *
  * @author Mathias
  */
-public class Pionnen {
+public class Schaken {
+       /** x-coordinaat van het mannetjes */
     private int x;
     /** y-coordinaat van het mannetjes */
     private int y;
@@ -21,9 +22,8 @@ public class Pionnen {
 
     /** constructor voor een wandelaar die in de oorsprong begint 
      */    
-    public Pionnen() {
-        this(325,725);
-        
+    public Schaken() {
+        this(625,725);
     }
     
     /**
@@ -32,7 +32,7 @@ public class Pionnen {
      * @param x x-coordinaat
      * @param y y-coordinaat
      */
-    public Pionnen(int x, int y) {
+    public Schaken(int x, int y) {
         this.x = x;
         this.y = y;
         
@@ -82,10 +82,11 @@ public class Pionnen {
         return y;
     }
     public void reset(){
-        y= 325;
+        y= 625;
         x= 725;
     }
         
         
     
 }
+
