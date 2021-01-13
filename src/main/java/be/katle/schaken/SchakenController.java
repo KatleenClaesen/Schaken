@@ -7,6 +7,8 @@ package be.katle.schaken;
 
 import Stukken.model.Pionnen;
 import Stukken.model.Schaken;
+import Stukken.model.Toren;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,6 +20,7 @@ import view.Stukken.PionnenView;
 import view.Stukken.SchakenView;
 import javafx.event.ActionEvent;
 import javafx.util.Pair;
+import view.Stukken.TorenView;
 
 
 public class SchakenController {
@@ -59,7 +62,8 @@ public class SchakenController {
     private Pionnen modelPion;
     private PionnenView viewPion;
     
-    
+    private Toren modelToren;
+    private TorenView viewToren;
     
     
 
@@ -67,12 +71,13 @@ public class SchakenController {
     void initialize() {
         model = new Schaken();
         modelPion = new Pionnen();
+        modelToren = new Toren();
          
         view = new SchakenView(model);
         viewPion = new PionnenView(modelPion);
+        viewToren = new TorenView(modelToren);
         
-        
-        bord.getChildren().addAll(view,viewPion);
+        bord.getChildren().addAll(view,viewPion,viewToren);
         bord.setOnMousePressed(this::test);
         testPlane.getChildren().add(reset);
         reset.setOnAction(this::reset);
