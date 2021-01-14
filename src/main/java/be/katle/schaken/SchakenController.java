@@ -79,7 +79,7 @@ public class SchakenController {
         
         bord.getChildren().addAll(view,viewPion,viewToren);
         bord.setOnMousePressed(this::test);
-        testPlane.getChildren().add(reset);
+        //testPlane.getChildren().add(reset);
         reset.setOnAction(this::reset);
         
         update();

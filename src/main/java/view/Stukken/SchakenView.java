@@ -6,6 +6,7 @@
 package view.Stukken;
 
 import Stukken.model.Schaken;
+import Stukken.model.Toren;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
@@ -30,18 +31,16 @@ public class SchakenView extends Region{
     }
     
     public void update(){
-        getChildren().clear();
         
         paneel.setTranslateX(this.model.getX());
         paneel.setTranslateY(this.model.getY());
         
-        getChildren().addAll(paneel);
     }
     
     public void createSmiley(){
         
         paneel = new AnchorPane();
-        Circle hoofdje = new Circle(25,25,25, null); // center x, centery, radius, fill = null
+        /*Circle hoofdje = new Circle(25,25,25, null); // center x, centery, radius, fill = null
         //80% rood, 0% groen, 0% blauw, 100% zichtbaar
         hoofdje.setStroke(new Color(0.8f,0,0,1)); //
         
@@ -51,6 +50,10 @@ public class SchakenView extends Region{
         oogje.setFill(new Color(0,0,0.8f,1));
         
         paneel.getChildren().addAll(hoofdje,knipOog,mond, oogje);
+     */
+        TorenView tv = new TorenView(new Toren());
+        getChildren().add(tv);
+        
     
     }
         

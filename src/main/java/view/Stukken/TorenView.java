@@ -40,10 +40,10 @@ public class TorenView extends Region{
     public void update(){
         getChildren().clear();
         
-        paneel.setTranslateX(this.modelToren.getX());
-        paneel.setTranslateY(this.modelToren.getY());
+        setTranslateX(this.modelToren.getX());
+        setTranslateY(this.modelToren.getY());
         
-        getChildren().addAll(paneel);
+        getChildren().add(paneel);
     }
     
     private void Image(){
@@ -51,13 +51,12 @@ public class TorenView extends Region{
         
         
         
-        paneel.getChildren().addAll();
-        //Image toren = new Image(new FileInputStream("D:\\github\\Schaken\\afbeelding\\Toren.jpg"));
-        //ImageView imageView = new ImageView(toren);
-        //imageView.setFitHeight(100);
-        //imageView.setFitWidth(100);
-        //imageView.setPreserveRatio(false);
-        
+        Image toren = new Image("file:///C:/Users/Stijn/Schaken/afbeeldingen/Toren.jpg");
+        ImageView imageView = new ImageView(toren);
+        imageView.setFitHeight(100);
+        imageView.setFitWidth(100);
+        imageView.setPreserveRatio(false);
+        paneel.getChildren().add(imageView);
     }
             
 }
