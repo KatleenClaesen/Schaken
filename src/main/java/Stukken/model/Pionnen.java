@@ -22,7 +22,7 @@ public class Pionnen {
     /** constructor voor een wandelaar die in de oorsprong begint 
      */    
     public Pionnen() {
-        this(325,725);
+        this(0,600);
         
     }
     
@@ -82,8 +82,8 @@ public class Pionnen {
         return y;
     }
     public void reset(){
-        y= 325;
-        x= 725;
+        y= 600;
+        x= 0;
     }
         
         

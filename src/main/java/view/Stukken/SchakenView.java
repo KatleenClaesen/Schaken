@@ -7,6 +7,11 @@ package view.Stukken;
 
 import Stukken.model.Schaken;
 import Stukken.model.Toren;
+import Stukken.model.Koning;
+import Stukken.model.Loper;
+import Stukken.model.Paard;
+import Stukken.model.Pionnen;
+import Stukken.model.Queen;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
@@ -22,7 +27,7 @@ import javafx.scene.shape.Rectangle;
 public class SchakenView extends Region{
     private Schaken model;
     private AnchorPane paneel;
-    private static final int RADIUS = 4;
+    private static final int RADIUS = 10;
 
     public SchakenView(Schaken model) {
         this.model = model;
@@ -40,26 +45,18 @@ public class SchakenView extends Region{
     public void createSmiley(){
         
         paneel = new AnchorPane();
-        /*Circle hoofdje = new Circle(25,25,25, null); // center x, centery, radius, fill = null
-        //80% rood, 0% groen, 0% blauw, 100% zichtbaar
-        hoofdje.setStroke(new Color(0.8f,0,0,1)); //
-        
-        Line knipOog = new Line(10,10,15,10);
-        Arc mond = new Arc(25,25,18,18,-30,-120); 
-        Circle oogje = new Circle(35,10,5);
-        oogje.setFill(new Color(0,0,0.8f,1));
-        
-        paneel.getChildren().addAll(hoofdje,knipOog,mond, oogje);
-     */
+        KoningView kv = new KoningView(new Koning());
+        PionnenView pv = new PionnenView(new Pionnen());
         TorenView tv = new TorenView(new Toren());
-        getChildren().add(tv);
+        QueenView qv = new QueenView(new Queen());
+        LoperView lv = new LoperView(new Loper());
+        PaardView pav = new PaardView(new Paard());
+        
+        
+        paneel.getChildren().addAll(tv,kv,pv,qv,lv,pav);
         
     
     }
-        
-     public boolean isOpSchaken(double x,double y){
-        return Math.sqrt(Math.pow(model.getX()+25-x,2) + Math.pow(model.getY()+25 - y, 2)) <= RADIUS;
-     }
 }
     
     

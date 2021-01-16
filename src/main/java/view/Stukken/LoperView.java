@@ -5,58 +5,53 @@
  */
 package view.Stukken;
 
-import Stukken.model.Pionnen;
+import Stukken.model.Loper;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 
 /**
  *
  * @author Mathias
  */
-public class PionnenView extends Region{
+public class LoperView extends Region{
     private AnchorPane paneel;
-    private Pionnen modelPion;
+    private Loper modelLoper;
     
 
-    public PionnenView(Pionnen modelPion){
-        this.modelPion = modelPion;
-        createSmiley();
-        updatePion();
+    public LoperView(Loper modelLoper){
+        this.modelLoper = modelLoper;
+        findImageLoper();
+        updateLoper();
         
     }
     
-    public void updatePion(){
+    public void updateLoper(){
         getChildren().clear();
         
-        paneel.setTranslateX(this.modelPion.getX());
-        paneel.setTranslateY(this.modelPion.getY());
+        paneel.setTranslateX(this.modelLoper.getX());
+        paneel.setTranslateY(this.modelLoper.getY());
         
         getChildren().addAll(paneel);
     }
-    public void createSmiley(){
+    public void findImageLoper(){
         
         paneel = new AnchorPane();
         
-        Image koning = new Image("file:///D:/github/Schaken/afbeeldingen/Pion.png");
-        ImageView imageView = new ImageView(koning);
+        Image loper = new Image("file:///D:/github/Schaken/afbeeldingen/Loper.png");
+        ImageView imageView = new ImageView(loper);
         imageView.setFitHeight(100);
         imageView.setFitWidth(100);
         imageView.setPreserveRatio(false);
         
         paneel.getChildren().add(imageView);
     }
-     public boolean isOpPion(double x,double y){
-        if(x > modelPion.getX() + 99 )
+     public boolean isOpLoper(double x,double y){
+        if(x > modelLoper.getX() + 99 )
             return false;
-        if(y > modelPion.getY()+ 99)
+        if(y > modelLoper.getY()+ 99)
             return false;
         return true;
      }
-     
 }

@@ -23,7 +23,7 @@ public class Schaken {
     /** constructor voor een wandelaar die in de oorsprong begint 
      */    
     public Schaken() {
-        this(625,725);
+        this(600,700);
     }
     
     /**
@@ -82,7 +82,7 @@ public class Schaken {
         return y;
     }
     public void reset(){
-        y= 625;
+        y= 525;
         x= 725;
     }
         

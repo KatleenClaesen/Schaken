@@ -5,32 +5,23 @@
  */
 package view.Stukken;
 
-import Stukken.model.Toren;
-import java.io.File;
+import Stukken.model.Koning;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
-
-
 
 /**
  *
  * @author Mathias
  */
-public class TorenView extends Region{
-    private Toren modelToren;
+public class KoningView extends Region{
+    private Koning modelKoning;
     private AnchorPane paneel;
     private static final int RADIUS = 50;
    
-    public TorenView(Toren model){
-        this.modelToren = model;
+    public KoningView(Koning model){
+        this.modelKoning = model;
         Image();
         update();
         
@@ -42,8 +33,8 @@ public class TorenView extends Region{
     public void update(){
         getChildren().clear();
         
-        setTranslateX(this.modelToren.getX());
-        setTranslateY(this.modelToren.getY());
+        setTranslateX(this.modelKoning.getX());
+        setTranslateY(this.modelKoning.getY());
         
         getChildren().add(paneel);
     }
@@ -56,24 +47,19 @@ public class TorenView extends Region{
         
         
         
-        Image toren = new Image("file:///D:/github/Schaken/afbeeldingen/TorenZwart.png");
-        ImageView imageView = new ImageView(toren);
+        Image koning = new Image("file:///D:/github/Schaken/afbeeldingen/Koning.png");
+        ImageView imageView = new ImageView(koning);
         imageView.setFitHeight(100);
         imageView.setFitWidth(100);
         imageView.setPreserveRatio(false);
         paneel.getChildren().add(imageView);
     }
-    /**
-     * gaat kijken of er op de toren is geklikt
-     * @param x
-     * @param y
-     * @return 
-     */
-    public boolean isOpToren(double x,double y){
-        if(x > modelToren.getX() + 99 )
+    public boolean isOpKoning(double x,double y){
+       if(x > modelKoning.getX() + 99 )
             return false;
-        if(y > modelToren.getY()+ 99)
+        if(y > modelKoning.getY()+ 99)
             return false;
         return true;
      }        
+    
 }

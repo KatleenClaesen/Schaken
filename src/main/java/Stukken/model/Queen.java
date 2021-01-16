@@ -6,13 +6,13 @@
 package Stukken.model;
 
 /**
- *het model van de toren 
+ *
  * @author Mathias
  */
-public class Toren {
-    /** x-coordinaat van de toren */
+public class Queen {
+       /** x-coordinaat van de queen */
     private int x;
-    /** y-coordinaat van de toren */
+    /** y-coordinaat van de queen */
     private int y;
     /**
      * de coordinaten die worden doorgegeven bij mousemovement
@@ -22,10 +22,10 @@ public class Toren {
     
     
 
-    /**startpositie van de toren
+    /**startpositie van de Queen
      */    
-    public Toren() {
-        this(700,700);
+    public Queen() {
+        this(300,700);
     }
     
     /**
@@ -34,13 +34,13 @@ public class Toren {
      * @param x x-coordinaat
      * @param y y-coordinaat
      */
-    public Toren(int x, int y) {
+    public Queen(int x, int y) {
         this.x = x;
         this.y = y;
         
     }
     /**
-     * the movement of the toren(tijdelijke coordinaten van de muis omzetten in de uiteindelijke coordinaten(hier de beweging toepassen)
+     * the movement of the Queen(tijdelijke coordinaten van de muis omzetten in de uiteindelijke coordinaten(hier de beweging toepassen)
      */
     public void newX(){
         this.x = temp_x;
@@ -60,14 +60,12 @@ public class Toren {
         return y;
     }
     
-    /** de reset van de toren*/
+    /** de reset van de Queen*/
     public void reset(){
         y= 700;
-        x= 700;
+        x= 300;
     }
         
         
     
 }
-
-

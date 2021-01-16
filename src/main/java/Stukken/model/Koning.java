@@ -6,42 +6,37 @@
 package Stukken.model;
 
 /**
- *het model van de toren 
+ *
  * @author Mathias
  */
-public class Toren {
-    /** x-coordinaat van de toren */
+public class Koning {
     private int x;
-    /** y-coordinaat van de toren */
+    /** y-coordinaat van het mannetjes */
     private int y;
-    /**
-     * de coordinaten die worden doorgegeven bij mousemovement
-     */
+    
     public int temp_x;
     public int temp_y;
     
     
 
-    /**startpositie van de toren
+    /** constructor voor een wandelaar die in de oorsprong begint 
      */    
-    public Toren() {
-        this(700,700);
+    public Koning() {
+        this(400,700);
     }
     
     /**
-     * 
+     * constructor voor wandelaar op opgegeven positie
      * 
      * @param x x-coordinaat
      * @param y y-coordinaat
      */
-    public Toren(int x, int y) {
+    public Koning(int x, int y) {
         this.x = x;
         this.y = y;
         
     }
-    /**
-     * the movement of the toren(tijdelijke coordinaten van de muis omzetten in de uiteindelijke coordinaten(hier de beweging toepassen)
-     */
+
     public void newX(){
         this.x = temp_x;
         
@@ -51,23 +46,20 @@ public class Toren {
         this.y = temp_y;
     }
 
-    /** voor het opvragen van de huidige coordinaten van het model(x)*/
+    
     public int getX() {
         return x;
     }
-    /** voor het opvragen van de huidige coordinaten van het model(y)*/
+
+    /**
+     * y-coordinaat van het mannetjes
+     * @return the y
+     */
     public int getY() {
         return y;
     }
-    
-    /** de reset van de toren*/
     public void reset(){
         y= 700;
-        x= 700;
+        x= 400;
     }
-        
-        
-    
 }
-
-

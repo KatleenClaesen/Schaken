@@ -5,58 +5,54 @@
  */
 package view.Stukken;
 
-import Stukken.model.Pionnen;
+import Stukken.model.Paard;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 
 /**
  *
  * @author Mathias
  */
-public class PionnenView extends Region{
+public class PaardView extends Region{
     private AnchorPane paneel;
-    private Pionnen modelPion;
+    private Paard modelPaard;
     
 
-    public PionnenView(Pionnen modelPion){
-        this.modelPion = modelPion;
-        createSmiley();
-        updatePion();
+    public PaardView(Paard modelPaard){
+        this.modelPaard = modelPaard;
+        findImagePaard();
+        updatePaard();
         
     }
     
-    public void updatePion(){
+    public void updatePaard(){
         getChildren().clear();
         
-        paneel.setTranslateX(this.modelPion.getX());
-        paneel.setTranslateY(this.modelPion.getY());
+        paneel.setTranslateX(this.modelPaard.getX());
+        paneel.setTranslateY(this.modelPaard.getY());
         
         getChildren().addAll(paneel);
     }
-    public void createSmiley(){
+    public void findImagePaard(){
         
         paneel = new AnchorPane();
         
-        Image koning = new Image("file:///D:/github/Schaken/afbeeldingen/Pion.png");
-        ImageView imageView = new ImageView(koning);
+        Image paard = new Image("file:///D:/github/Schaken/afbeeldingen/Paard.png");
+        ImageView imageView = new ImageView(paard);
         imageView.setFitHeight(100);
         imageView.setFitWidth(100);
         imageView.setPreserveRatio(false);
         
         paneel.getChildren().add(imageView);
     }
-     public boolean isOpPion(double x,double y){
-        if(x > modelPion.getX() + 99 )
+     public boolean isOpPaard(double x,double y){
+        if(x > modelPaard.getX() + 99 )
             return false;
-        if(y > modelPion.getY()+ 99)
+        if(y > modelPaard.getY()+ 99)
             return false;
         return true;
      }
-     
 }
+

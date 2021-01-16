@@ -5,45 +5,41 @@
  */
 package view.Stukken;
 
-import Stukken.model.Pionnen;
+import Stukken.model.Queen;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 
 /**
  *
  * @author Mathias
  */
-public class PionnenView extends Region{
+public class QueenView extends Region{
     private AnchorPane paneel;
-    private Pionnen modelPion;
+    private Queen modelQueen;
     
 
-    public PionnenView(Pionnen modelPion){
-        this.modelPion = modelPion;
-        createSmiley();
-        updatePion();
+    public QueenView(Queen modelQueen){
+        this.modelQueen = modelQueen;
+        findImageQueen();
+        updateQueen();
         
     }
     
-    public void updatePion(){
+    public void updateQueen(){
         getChildren().clear();
         
-        paneel.setTranslateX(this.modelPion.getX());
-        paneel.setTranslateY(this.modelPion.getY());
+        paneel.setTranslateX(this.modelQueen.getX());
+        paneel.setTranslateY(this.modelQueen.getY());
         
         getChildren().addAll(paneel);
     }
-    public void createSmiley(){
+    public void findImageQueen(){
         
         paneel = new AnchorPane();
         
-        Image koning = new Image("file:///D:/github/Schaken/afbeeldingen/Pion.png");
+        Image koning = new Image("file:///D:/github/Schaken/afbeeldingen/Queen.png");
         ImageView imageView = new ImageView(koning);
         imageView.setFitHeight(100);
         imageView.setFitWidth(100);
@@ -51,12 +47,12 @@ public class PionnenView extends Region{
         
         paneel.getChildren().add(imageView);
     }
-     public boolean isOpPion(double x,double y){
-        if(x > modelPion.getX() + 99 )
+     public boolean isOpQueen(double x,double y){
+        if(x > modelQueen.getX() + 99 )
             return false;
-        if(y > modelPion.getY()+ 99)
+        if(y > modelQueen.getY()+ 99)
             return false;
         return true;
      }
-     
 }
+
