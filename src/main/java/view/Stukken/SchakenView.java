@@ -46,14 +46,14 @@ public class SchakenView extends Region{
         
         paneel = new AnchorPane();
         KoningView kv = new KoningView(new Koning());
-        PionnenView pv = new PionnenView(new Pionnen());
+        PionnenView pv = new PionnenView(new Pionnen(1));
         TorenView tv = new TorenView(new Toren());
         QueenView qv = new QueenView(new Queen());
         LoperView lv = new LoperView(new Loper());
         PaardView pav = new PaardView(new Paard());
+        PionnenView pv2 = new PionnenView(new Pionnen(2));
         
-        
-        paneel.getChildren().addAll(tv,kv,pv,qv,lv,pav);
+        paneel.getChildren().addAll(tv,kv,pv,qv,lv,pav,pv2);
         
     
     }

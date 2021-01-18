@@ -56,7 +56,7 @@ public class TorenView extends Region{
         
         
         
-        Image toren = new Image("file:///D:/github/Schaken/afbeeldingen/TorenZwart.png");
+        Image toren = new Image("file:///D:/github/Schaken/afbeeldingen/Toren.png");
         ImageView imageView = new ImageView(toren);
         imageView.setFitHeight(100);
         imageView.setFitWidth(100);

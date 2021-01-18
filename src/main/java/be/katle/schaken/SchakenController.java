@@ -60,13 +60,15 @@ public class SchakenController {
     private SchakenView view;
     
     /**
-     * getting the view and model of the pieses
+     * getting the view and model of the pieces
      */
     public int mouseX;
     public int mouseY;
     
     private Pionnen modelPion;
+    private Pionnen modelPion2;
     private PionnenView viewPion;
+    private PionnenView viewPion2;
     
     private Toren modelToren;
     private TorenView viewToren;
@@ -92,7 +94,8 @@ public class SchakenController {
     @FXML
     void initialize() {
         model = new Schaken();
-        modelPion = new Pionnen();
+        modelPion = new Pionnen(1);
+        modelPion2 = new Pionnen(2);
         modelToren = new Toren();
         modelKoning = new Koning();
         modelQueen = new Queen();
@@ -107,12 +110,13 @@ public class SchakenController {
         viewQueen = new QueenView(modelQueen);
         viewLoper = new LoperView(modelLoper);
         viewPaard = new PaardView(modelPaard);
+        viewPion2 = new PionnenView(modelPion2);
         
         
-        
-        bord.getChildren().addAll(view,viewPion,viewToren,viewKoning,viewQueen,viewLoper,viewPaard);
+        bord.getChildren().addAll(view,viewPion,viewToren,viewKoning,viewQueen,viewLoper,viewPaard,viewPion2);
+        /* als er op het spelbord w geklikt gaat er gezien worden waar er geklikt w*/
         bord.setOnMousePressed(this::test);
-        //testPlane.getChildren().add(reset);
+        
         
         
         update();
@@ -129,7 +133,7 @@ public class SchakenController {
         
     }
     /**
-     * kijkt op welk speelstuk er geklikt is en gaat de coordinaten laten ophalen
+     * kijkt op welk speelstuk er geklikt is en gaat de coordinaten laten ophalen en veranderen naar de coordinaten waar de muis is losgelaten
      * @param e 
      */
     public void test(MouseEvent e){

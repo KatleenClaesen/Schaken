@@ -19,14 +19,14 @@ public class Koning {
     
     
 
-    /** constructor voor een wandelaar die in de oorsprong begint 
+    /** startpositie van de koning
      */    
     public Koning() {
         this(400,700);
     }
     
     /**
-     * constructor voor wandelaar op opgegeven positie
+     * constructor voor koning op opgegeven positie
      * 
      * @param x x-coordinaat
      * @param y y-coordinaat
@@ -46,13 +46,16 @@ public class Koning {
         this.y = temp_y;
     }
 
-    
+    /**
+     * x-coordinaat van de koning
+     * @return the x
+     */
     public int getX() {
         return x;
     }
 
     /**
-     * y-coordinaat van het mannetjes
+     * y-coordinaat van de koning
      * @return the y
      */
     public int getY() {

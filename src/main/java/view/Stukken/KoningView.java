@@ -12,13 +12,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 
 /**
- *
+ *the view of the king
  * @author Mathias
  */
 public class KoningView extends Region{
     private Koning modelKoning;
     private AnchorPane paneel;
-    private static final int RADIUS = 50;
+    
    
     public KoningView(Koning model){
         this.modelKoning = model;
@@ -28,7 +28,7 @@ public class KoningView extends Region{
         
     }
     /**
-     * the update method for Toren
+     * the update method for the king
      */
     public void update(){
         getChildren().clear();
@@ -39,7 +39,7 @@ public class KoningView extends Region{
         getChildren().add(paneel);
     }
     
-    /*getting the image Toren and adjusting the size to the right size for the project
+    /**getting the image koning and adjusting the size to the right size for the project
     
     */
     private void Image(){
@@ -54,6 +54,8 @@ public class KoningView extends Region{
         imageView.setPreserveRatio(false);
         paneel.getChildren().add(imageView);
     }
+    
+    /** kijken of er op de koning is geklikt door de cooordinaten van de klik met de houdige coordinaten van het model te vergelijken*/
     public boolean isOpKoning(double x,double y){
        if(x > modelKoning.getX() + 99 )
             return false;

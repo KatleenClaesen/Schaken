@@ -17,13 +17,34 @@ public class Pionnen {
     public int temp_x;
     public int temp_y;
     
-    
+    private int startX;
+    private int startY;
+    private int i;
 
     /** constructor voor een wandelaar die in de oorsprong begint 
      */    
-    public Pionnen() {
-        this(0,600);
+    
+    public Pionnen(int i){
+        startX= 0;
+        startY= 600;
+        //x= startX;
+        //y= startY;
+        this.x= i *100;
+        this.y= 600;
         
+    }
+    
+    /**public Pionnen(int i, int j) {
+        
+        this.x = startX;
+        this.y = startY;
+       
+       
+    }
+    */
+    /**Pionnen(int i) {
+       this.x= i *100;
+       this.y= 600;
     }
     
     /**
@@ -32,12 +53,12 @@ public class Pionnen {
      * @param x x-coordinaat
      * @param y y-coordinaat
      */
-    public Pionnen(int x, int y) {
+    /**public Pionnen(int x, int y) {
         this.x = x;
         this.y = y;
         
     }
-
+    */
     public void newX(){
         if(temp_x>0 && temp_x<100){
             this.x = 25;
