@@ -5,6 +5,7 @@
  */
 package be.katle.schaken;
 
+import Bord.model.Bord;
 import Stukken.model.Koning;
 import Stukken.model.Loper;
 import Stukken.model.Paard;
@@ -22,7 +23,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import view.Stukken.PionnenView;
-import view.Stukken.SchakenView;
+import view.Stukken.BordView;
 import javafx.event.ActionEvent;
 import javafx.util.Pair;
 import view.Stukken.KoningView;
@@ -56,8 +57,8 @@ public class SchakenController {
     /**
      * 
      */
-    private Schaken model;
-    private SchakenView view;
+    private Bord model;
+    private BordView view;
     
     /**
      * getting the view and model of the pieces
@@ -93,27 +94,27 @@ public class SchakenController {
 
     @FXML
     void initialize() {
-        model = new Schaken();
+        model = new Bord();
         modelPion = new Pionnen(1);
         modelPion2 = new Pionnen(2);
         modelToren = new Toren();
         modelKoning = new Koning();
         modelQueen = new Queen();
         modelLoper = new Loper();
-        modelPaard = new Paard();
+        //modelPaard = new Paard();
         
          
-        view = new SchakenView(model);
+        view = new BordView(model);
         viewPion = new PionnenView(modelPion);
         viewToren = new TorenView(modelToren);
         viewKoning = new KoningView(modelKoning);
         viewQueen = new QueenView(modelQueen);
         viewLoper = new LoperView(modelLoper);
-        viewPaard = new PaardView(modelPaard);
+        //viewPaard = new PaardView(modelPaard);
         viewPion2 = new PionnenView(modelPion2);
         
         
-        bord.getChildren().addAll(view,viewPion,viewToren,viewKoning,viewQueen,viewLoper,viewPaard,viewPion2);
+        bord.getChildren().addAll(view,viewPion,viewToren,viewKoning,viewQueen,viewLoper,viewPion2);
         /* als er op het spelbord w geklikt gaat er gezien worden waar er geklikt w*/
         bord.setOnMousePressed(this::test);
         
@@ -152,9 +153,9 @@ public class SchakenController {
         else if(viewLoper.isOpLoper(e.getX(), e.getY())){
             viewLoper.setOnMouseReleased(this::moveLoper);
         }
-        else if(viewPaard.isOpPaard(e.getX(),e.getY())){
-            viewPaard.setOnMouseReleased(this::movePaard);
-        }
+        //else if(viewPaard.isOpPaard(e.getX(),e.getY())){
+            //viewPaard.setOnMouseReleased(this::movePaard);
+        //}
   
     }
     /**
@@ -224,7 +225,7 @@ public class SchakenController {
         System.out.println(mouseX+","+mouseY);
     }
     
-    public void movePaard(MouseEvent e){
+    /*public void movePaard(MouseEvent e){
         this.mouseX = (int) e.getX();
         this.mouseY = (int) e.getY();
         this.modelPaard.temp_x = mouseX;
@@ -245,20 +246,20 @@ public class SchakenController {
         viewKoning.update();
         viewQueen.updateQueen();
         viewLoper.updateLoper();
-        viewPaard.updatePaard();
+        //viewPaard.updatePaard();
     }
     /**
      * the reset of all the pieces
      * 
      */
     private void reset(ActionEvent e){
-        model.reset();
+        //model.reset();
         modelPion.reset();
         modelToren.reset();
         modelKoning.reset();
         modelQueen.reset();
         modelLoper.reset();
-        modelPaard.reset();
+        //modelPaard.reset();
         update();
     }
    

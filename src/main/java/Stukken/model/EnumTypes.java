@@ -9,6 +9,6 @@ package Stukken.model;
  *
  * @author katle
  */
-public class EnumTypes {
-    
+public enum EnumTypes {
+    PION, PAARD, LOPER, TOREN, KONING, QUEEN;
 }

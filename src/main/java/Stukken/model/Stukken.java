@@ -5,10 +5,44 @@
  */
 package Stukken.model;
 
+import Speler.model.EnumSpeler;
+
 /**
  *
  * @author katle
  */
-public class Stukken {
+public abstract class Stukken {
+    public EnumSpeler speler;
+    public EnumTypes type;
+    int x;
+    int y;
+
+    public Stukken(int i, int j, EnumSpeler speler, EnumTypes type) {
+        this.x = i;
+        this.y = j;
+        this.speler = speler;
+        this.type = type;
+    }
+    
+    
+    
+    
+
+    /**
+     * Krijg het type speler
+     * @return De speler
+     */
+    public EnumSpeler getSpeler() {
+        return speler;
+    }
+
+    /**
+     * Krijg het type speelstuk
+     * @return Het type
+     */
+    public EnumTypes getType() {
+        return type;
+    }
+    
     
 }

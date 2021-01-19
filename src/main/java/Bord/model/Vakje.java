@@ -1,12 +1,13 @@
 package Bord.model;
 
 import Stukken.model.Stukken;
+import Stukken.model.Toren;
 /**
  * Een vakje op het schaakbord, met eventueel een speelstuk op
  * 
  * @author Katleen Claesen
  */
-public class Vakje {
+public abstract class Vakje {
     private Coordinaat coordinaat;
     private Stukken speelstuk;
 
@@ -52,5 +53,6 @@ public class Vakje {
     public void setSpeelstuk(Stukken speelstuk) {
         this.speelstuk = speelstuk;
     }
+
     
 }
