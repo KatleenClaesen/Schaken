@@ -7,4 +7,6 @@ package Speler.model;
  */
 public enum EnumSpeler {
     WIT, ZWART;
+
+    
 }

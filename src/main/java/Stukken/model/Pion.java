@@ -5,26 +5,30 @@
  */
 package Stukken.model;
 
+import Speler.model.EnumSpeler;
+
 /**
  *
  * @author Mathias
  */
-public class Pionnen {
-    private int x;
+public class Pion extends Stukken{
+    public Pion(EnumSpeler enumSpeler, EnumTypes enumTypes) {
+        super(enumSpeler, enumTypes); 
+    //private int x;
     /** y-coordinaat van het mannetjes */
-    private int y;
+    //private int y;
     
-    public int temp_x;
-    public int temp_y;
+    //public int temp_x;
+    //public int temp_y;
     
-    private int startX;
-    private int startY;
-    private int i;
+    //private int startX;
+    //private int startY;
+    //private int i;
 
     /** constructor voor een wandelaar die in de oorsprong begint 
      */    
     
-    public Pionnen(int i){
+    /*public Pion(int i){
         startX= 0;
         startY= 600;
         //x= startX;
@@ -33,7 +37,7 @@ public class Pionnen {
         this.y= 600;
         
     }
-    
+    */
     /**public Pionnen(int i, int j) {
         
         this.x = startX;
@@ -59,6 +63,7 @@ public class Pionnen {
         
     }
     */
+    /*
     public void newX(){
         if(temp_x>0 && temp_x<100){
             this.x = 25;
@@ -98,7 +103,7 @@ public class Pionnen {
     /**
      * y-coordinaat van het mannetjes
      * @return the y
-     */
+     *//*
     public int getY() {
         return y;
     }
@@ -106,7 +111,7 @@ public class Pionnen {
         y= 600;
         x= 0;
     }
-        
-        
+        */
+    }  
     
 }

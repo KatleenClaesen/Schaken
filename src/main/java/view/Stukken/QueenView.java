@@ -15,7 +15,7 @@ import javafx.scene.layout.Region;
  *
  * @author Mathias
  */
-public class QueenView extends Region{
+public class QueenView extends Region{/*
     private AnchorPane paneel;
     private Queen modelQueen;
     
@@ -53,6 +53,6 @@ public class QueenView extends Region{
         if(y > modelQueen.getY()+ 99)
             return false;
         return true;
-     }
+     }*/
 }
 

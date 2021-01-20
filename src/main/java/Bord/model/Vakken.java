@@ -5,7 +5,7 @@
  */
 package Bord.model;
 
-import Bord.model.Coordinaat;
+
 import javafx.scene.layout.Region;
 
 /**

@@ -1,7 +1,7 @@
 package Bord.model;
 
-import Bord.model.Vakje;
-import Bord.model.Coordinaat;
+
+
 import Bord.model.Vakken;
 import Speler.model.EnumSpeler;
 import Stukken.model.EnumTypes;
@@ -16,9 +16,10 @@ import Stukken.model.*;
  */
 public class Bord {
     private Stukken[][] schaakbord;
-    private int speler;
+    private EnumSpeler speler;
     private int speelstuk;
-    private Coordinaat coordinaat;
+    private EnumTypes type;
+    
     
     //maak het bord
     //zet speler, witte en zwarte stukken
@@ -26,27 +27,45 @@ public class Bord {
 
     public Bord(){
         schaakbord = new Stukken[8][8];
-        //LeegBord();
+        LeegBord();
         ZetStukken();
     }
+   
     
-    private static final String Paard = "file:///D:/github/Schaken/afbeeldingen/Paard.png";    
-    
-
-      
-    
-    
-    /*public void LeegBord(){
-        schaakbord = new Vakken[8][8];
+    public void LeegBord(){
+        schaakbord = new Stukken[8][8];
         for (int i=0; i<8; i++){
             for (int j=0; j<8; j++){
-              schaakbord[i][j]= new Vakken(i,j) {}; 
+              schaakbord[i][j]= new Stukken(speler,type) {}; 
             }
         }   
-    }*/
+    }
     public void ZetStukken(){
-        schaakbord[6][7]= new Paard(0,0, EnumSpeler.ZWART, EnumTypes.PAARD);
-        schaakbord[1][7]= new Paard(0,0, EnumSpeler.ZWART, EnumTypes.PAARD);
+        int x;
+        for(x=0; x<8; x++){
+            schaakbord[x][6]= new Pion(EnumSpeler.WIT, EnumTypes.PION);
+        }
+        for(x=0; x<8; x++){
+            schaakbord[x][1]= new Pion(EnumSpeler.ZWART, EnumTypes.PION);
+        }
+        schaakbord[0][0]= new Toren(EnumSpeler.ZWART, EnumTypes.TOREN);
+        schaakbord[1][0]= new Paard(EnumSpeler.ZWART, EnumTypes.PAARD);
+        schaakbord[2][0]= new Loper(EnumSpeler.ZWART, EnumTypes.LOPER);
+        schaakbord[3][0]= new Koning(EnumSpeler.ZWART, EnumTypes.KONING);
+        schaakbord[4][0]= new Queen(EnumSpeler.ZWART, EnumTypes.QUEEN);
+        schaakbord[5][0]= new Loper(EnumSpeler.ZWART, EnumTypes.LOPER);
+        schaakbord[6][0]= new Paard(EnumSpeler.ZWART, EnumTypes.PAARD);
+        schaakbord[7][0]= new Toren(EnumSpeler.ZWART, EnumTypes.TOREN); 
+        
+        schaakbord[0][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN);
+        schaakbord[1][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
+        schaakbord[2][7]= new Loper(EnumSpeler.WIT, EnumTypes.LOPER);
+        schaakbord[3][7]= new Koning(EnumSpeler.WIT, EnumTypes.KONING);
+        schaakbord[4][7]= new Queen(EnumSpeler.WIT, EnumTypes.QUEEN);
+        schaakbord[5][7]= new Loper(EnumSpeler.WIT, EnumTypes.LOPER);
+        schaakbord[6][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
+        schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN); 
+        
         /*stuk.add(new Stukken(2,0, EnumSpeler.ZWART, EnumTypes.LOPER));
         stuk.add(new Stukken(3,0, EnumSpeler.ZWART, EnumTypes.QUEEN));
         stuk.add(new Stukken(4,0, EnumSpeler.ZWART, EnumTypes.KONING));
@@ -80,7 +99,7 @@ public class Bord {
         stuk.add(new Stukken(6,6, EnumSpeler.WIT, EnumTypes.PION));
         stuk.add(new Stukken(7,6, EnumSpeler.WIT, EnumTypes.PION));
         */
-        System.out.println(schaakbord);
+        //System.out.println(schaakbord);
     
     }
     public Stukken getInhoud(int x,int y){

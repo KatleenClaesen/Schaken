@@ -24,7 +24,7 @@ import javafx.scene.shape.Line;
  *
  * @author Mathias
  */
-public class TorenView extends Region{
+public class TorenView extends Region{/*
     private Toren modelToren;
     private AnchorPane paneel;
     private static final int RADIUS = 50;
@@ -38,7 +38,7 @@ public class TorenView extends Region{
     }
     /**
      * the update method for Toren
-     */
+     *//*
     public void update(){
         getChildren().clear();
         
@@ -50,7 +50,7 @@ public class TorenView extends Region{
     
     /*getting the image Toren and adjusting the size to the right size for the project
     
-    */
+    *//*
     private void Image(){
         paneel = new AnchorPane();
         
@@ -68,12 +68,12 @@ public class TorenView extends Region{
      * @param x
      * @param y
      * @return 
-     */
+     *//*
     public boolean isOpToren(double x,double y){
         if(x > modelToren.getX() + 99 )
             return false;
         if(y > modelToren.getY()+ 99)
             return false;
         return true;
-     }        
+     }        */
 }

@@ -9,7 +9,7 @@ import Bord.model.Bord;
 import Stukken.model.Koning;
 import Stukken.model.Loper;
 import Stukken.model.Paard;
-import Stukken.model.Pionnen;
+import Stukken.model.Pion;
 import Stukken.model.Queen;
 import Stukken.model.Schaken;
 import Stukken.model.Toren;
@@ -28,7 +28,7 @@ import javafx.event.ActionEvent;
 import javafx.util.Pair;
 import view.Stukken.KoningView;
 import view.Stukken.LoperView;
-import view.Stukken.PaardView;
+import view.Stukken.StukView;
 import view.Stukken.QueenView;
 import view.Stukken.TorenView;
 
@@ -66,8 +66,8 @@ public class SchakenController {
     public int mouseX;
     public int mouseY;
     
-    private Pionnen modelPion;
-    private Pionnen modelPion2;
+    private Pion modelPion;
+    private Pion modelPion2;
     private PionnenView viewPion;
     private PionnenView viewPion2;
     
@@ -84,7 +84,7 @@ public class SchakenController {
     private LoperView viewLoper;
     
     private Paard modelPaard;
-    private PaardView viewPaard;
+    private StukView viewPaard;
     
     
     
@@ -95,35 +95,35 @@ public class SchakenController {
     @FXML
     void initialize() {
         model = new Bord();
-        modelPion = new Pionnen(1);
-        modelPion2 = new Pionnen(2);
-        modelToren = new Toren();
-        modelKoning = new Koning();
-        modelQueen = new Queen();
-        modelLoper = new Loper();
+        //modelPion = new Pion(1);
+        //modelPion2 = new Pion(2);
+       //modelToren = new Toren();
+        //modelKoning = new Koning();
+        //modelQueen = new Queen();
+        //modelLoper = new Loper();
         //modelPaard = new Paard();
         
          
         view = new BordView(model);
-        viewPion = new PionnenView(modelPion);
-        viewToren = new TorenView(modelToren);
-        viewKoning = new KoningView(modelKoning);
-        viewQueen = new QueenView(modelQueen);
-        viewLoper = new LoperView(modelLoper);
+        //viewPion = new PionnenView(modelPion);
+        //viewToren = new TorenView(modelToren);
+        //viewKoning = new KoningView(modelKoning);
+        //viewQueen = new QueenView(modelQueen);
+        //viewLoper = new LoperView(modelLoper);
         //viewPaard = new PaardView(modelPaard);
-        viewPion2 = new PionnenView(modelPion2);
+        //viewPion2 = new PionnenView(modelPion2);
         
         
-        bord.getChildren().addAll(view,viewPion,viewToren,viewKoning,viewQueen,viewLoper,viewPion2);
+        bord.getChildren().addAll(view);
         /* als er op het spelbord w geklikt gaat er gezien worden waar er geklikt w*/
         bord.setOnMousePressed(this::test);
         
         
         
-        update();
+        //update();
         
         reset.setFocusTraversable(false);
-        reset.setOnAction(this::reset);
+        //reset.setOnAction(this::reset);
         
 
     }
@@ -138,12 +138,12 @@ public class SchakenController {
      * @param e 
      */
     public void test(MouseEvent e){
-        if(viewToren.isOpToren(e.getX(), e.getY())){
+        /*if(viewToren.isOpToren(e.getX(), e.getY())){
             viewToren.setOnMouseReleased(this::move);
         }
-        else if(viewPion.isOpPion(e.getX(), e.getY())){
-            viewPion.setOnMouseReleased(this::movePion);
-        }
+        //else if(viewPion.isOpPion(e.getX(), e.getY())){
+            //viewPion.setOnMouseReleased(this::movePion);
+        //}
         else if(viewKoning.isOpKoning(e.getX(), e.getY())){
             viewKoning.setOnMouseReleased(this::moveKoning);
         }
@@ -162,7 +162,7 @@ public class SchakenController {
      * gaat de coordinaten van het speelstuk ophalen en doorgeven aan de view
      * @param e 
      */
-    
+    /*
     public void move(MouseEvent e){
         this.mouseX = (int) e.getX();
         this.mouseY = (int) e.getY();
@@ -175,7 +175,7 @@ public class SchakenController {
         System.out.println(mouseX+","+mouseY);
     }
     /**move voor de pion*/
-    public void movePion(MouseEvent e){
+    /*public void movePion(MouseEvent e){
         this.mouseX = (int) e.getX();
         this.mouseY = (int) e.getY();
         this.modelPion.temp_x = mouseX;
@@ -188,7 +188,7 @@ public class SchakenController {
        
         System.out.println(mouseX+","+mouseY);
     }
-    
+    *//*
     public void moveKoning(MouseEvent e){
         this.mouseX = (int) e.getX();
         this.mouseY = (int) e.getY();
@@ -200,7 +200,7 @@ public class SchakenController {
        
         System.out.println(mouseX+","+mouseY);
     }
-    /**move van de Queen*/
+    /**move van de Queen*//*
     public void moveQueen(MouseEvent e){
         this.mouseX = (int) e.getX();
         this.mouseY = (int) e.getY();
@@ -238,29 +238,29 @@ public class SchakenController {
     }
     /**
      * the update method for all views
-     */
-    private void update(){
-        view.update();
-        viewPion.updatePion();
-        viewToren.update();
-        viewKoning.update();
-        viewQueen.updateQueen();
-        viewLoper.updateLoper();
+     */}
+    //private void update(){
+        //view.update();
+        //viewPion.updatePion();
+        //viewToren.update();
+        //iewKoning.update();
+        //viewQueen.updateQueen();
+        //viewLoper.updateLoper();
         //viewPaard.updatePaard();
-    }
+    //}
     /**
      * the reset of all the pieces
      * 
      */
-    private void reset(ActionEvent e){
+    //private void reset(ActionEvent e){
         //model.reset();
-        modelPion.reset();
-        modelToren.reset();
-        modelKoning.reset();
-        modelQueen.reset();
-        modelLoper.reset();
+        //modelPion.reset();
+        //modelToren.reset();
+        //modelKoning.reset();
+        //modelQueen.reset();
+        //modelLoper.reset();
         //modelPaard.reset();
-        update();
-    }
+        //update();
+    //}
    
 }

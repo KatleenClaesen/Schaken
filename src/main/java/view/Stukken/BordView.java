@@ -6,13 +6,13 @@
 package view.Stukken;
 
 import Bord.model.Bord;
-import Bord.model.Vakje;
+
 import Stukken.model.Schaken;
 import Stukken.model.Toren;
 import Stukken.model.Koning;
 import Stukken.model.Loper;
 import Stukken.model.Paard;
-import Stukken.model.Pionnen;
+import Stukken.model.Pion;
 import Stukken.model.Queen;
 import Stukken.model.Stukken;
 import javafx.scene.Node;
@@ -79,12 +79,12 @@ public class BordView extends Region{
         
         paneel = new AnchorPane();
         KoningView kv = new KoningView(new Koning());
-        PionnenView pv = new PionnenView(new Pionnen(1));
+        PionnenView pv = new PionnenView(new Pion(1));
         TorenView tv = new TorenView(new Toren());
         QueenView qv = new QueenView(new Queen());
         LoperView lv = new LoperView(new Loper());
         //PaardView pav = new PaardView(Paard());
-        PionnenView pv2 = new PionnenView(new Pionnen(2));
+        PionnenView pv2 = new PionnenView(new Pion(2));
         //Paard pa = new Node("file:///D:/github/Schaken/afbeeldingen/Paard.png");
         paneel.getChildren().addAll(tv,kv,pv,qv,lv,pv2);
         

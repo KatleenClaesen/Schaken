@@ -5,7 +5,7 @@
  */
 package view.Stukken;
 
-import Stukken.model.Pionnen;
+import Stukken.model.Pion;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -21,25 +21,27 @@ import javafx.scene.shape.Line;
  */
 public class PionnenView extends Region{
     private AnchorPane paneel;
-    private Pionnen modelPion;
+    private Pion modelPion;
     
 
-    public PionnenView(Pionnen modelPion){
+    public PionnenView(Pion modelPion){
         this.modelPion = modelPion;
-        createSmiley();
-        updatePion();
-        
+        findImagePion();
+        setLayoutX(100);
+        setLayoutY(100);
+        //updatePion();
+        getChildren().add(paneel);
     }
     
-    public void updatePion(){
+    /*public void updatePion(){
         getChildren().clear();
         
         paneel.setTranslateX(this.modelPion.getX());
         paneel.setTranslateY(this.modelPion.getY());
         
         getChildren().addAll(paneel);
-    }
-    public void createSmiley(){
+    }*/
+    public void findImagePion(){
         
         paneel = new AnchorPane();
         
@@ -51,12 +53,12 @@ public class PionnenView extends Region{
         
         paneel.getChildren().add(imageView);
     }
-     public boolean isOpPion(double x,double y){
+    /*public boolean isOpPion(double x,double y){
         if(x > modelPion.getX() + 99 )
             return false;
         if(y > modelPion.getY()+ 99)
             return false;
         return true;
      }
-     
+     */
 }

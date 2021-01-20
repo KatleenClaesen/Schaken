@@ -7,6 +7,7 @@ package Stukken.model;
 
 import Speler.model.EnumSpeler;
 import Stukken.model.EnumTypes;
+import view.Stukken.StukView;
 
 /**
  *
@@ -14,8 +15,9 @@ import Stukken.model.EnumTypes;
  */
 public class Paard extends Stukken{
 
-    public Paard(int i, int j, EnumSpeler enumSpeler, EnumTypes enumTypes) {
-        super(i,j,enumSpeler,enumTypes);
+    public Paard( EnumSpeler enumSpeler, EnumTypes enumTypes) {
+        super(enumSpeler, enumTypes); 
+        
         }
 
     

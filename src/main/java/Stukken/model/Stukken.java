@@ -17,9 +17,9 @@ public abstract class Stukken {
     int x;
     int y;
 
-    public Stukken(int i, int j, EnumSpeler speler, EnumTypes type) {
-        this.x = i;
-        this.y = j;
+    public Stukken(EnumSpeler speler, EnumTypes type) {
+        //this.x = i;
+        //this.y = j;
         this.speler = speler;
         this.type = type;
     }

@@ -15,7 +15,7 @@ import javafx.scene.layout.Region;
  *
  * @author Mathias
  */
-public class LoperView extends Region{
+public class LoperView extends Region{/*
     private AnchorPane paneel;
     private Loper modelLoper;
     
@@ -53,5 +53,5 @@ public class LoperView extends Region{
         if(y > modelLoper.getY()+ 99)
             return false;
         return true;
-     }
+     }*/
 }
