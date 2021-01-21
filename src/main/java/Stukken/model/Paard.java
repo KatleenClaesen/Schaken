@@ -14,10 +14,15 @@ import view.Stukken.StukView;
  * @author Mathias
  */
 public class Paard extends Stukken{
-
-    public Paard( EnumSpeler enumSpeler, EnumTypes enumTypes) {
-        super(enumSpeler, enumTypes); 
-        
+    
+    /**
+     * Constructor voor een Paard
+     * 
+     * @param enumSpeler Het type speler
+     * @param enumTypes Het type speelstuk
+     */
+    public Paard( EnumSpeler speler, EnumTypes type) {
+        super(speler, type); 
         }
 
     

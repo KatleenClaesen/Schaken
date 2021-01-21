@@ -2,6 +2,7 @@ package Speler.model;
 
 import Speler.model.EnumSpeler;
 
+
 /**
  * Spelers maken en oproepen
  * 

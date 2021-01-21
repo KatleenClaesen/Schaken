@@ -1,7 +1,5 @@
 package Bord.model;
 
-
-
 import Bord.model.Vakken;
 import Speler.model.EnumSpeler;
 import Stukken.model.EnumTypes;
@@ -10,21 +8,26 @@ import Stukken.model.Toren;
 import java.util.HashSet;
 import view.Stukken.*;
 import Stukken.model.*;
+
+
 /**
- *
- * @author katle
+ * Het model van het speelbord
+ * @author Katleen
  */
 public class Bord {
-    private Stukken[][] schaakbord;
+    
+    public static Stukken[][] schaakbord;
     private EnumSpeler speler;
     private int speelstuk;
     private EnumTypes type;
     
     
-    //maak het bord
-    //zet speler, witte en zwarte stukken
     //reset het bord
 
+    
+    /**
+     * Constructor voor het schaakbord
+     */
     public Bord(){
         schaakbord = new Stukken[8][8];
         LeegBord();
@@ -32,6 +35,9 @@ public class Bord {
     }
    
     
+    /**
+     * Maak een leeg schaakbord (8x8)
+     */
     public void LeegBord(){
         schaakbord = new Stukken[8][8];
         for (int i=0; i<8; i++){
@@ -40,6 +46,11 @@ public class Bord {
             }
         }   
     }
+    
+    
+    /**
+     * Zet alle stukken op het bord
+     */
     public void ZetStukken(){
         int x;
         for(x=0; x<8; x++){
@@ -64,51 +75,24 @@ public class Bord {
         schaakbord[4][7]= new Queen(EnumSpeler.WIT, EnumTypes.QUEEN);
         schaakbord[5][7]= new Loper(EnumSpeler.WIT, EnumTypes.LOPER);
         schaakbord[6][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
-        schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN); 
-        
-        /*stuk.add(new Stukken(2,0, EnumSpeler.ZWART, EnumTypes.LOPER));
-        stuk.add(new Stukken(3,0, EnumSpeler.ZWART, EnumTypes.QUEEN));
-        stuk.add(new Stukken(4,0, EnumSpeler.ZWART, EnumTypes.KONING));
-        stuk.add(new Stukken(5,0, EnumSpeler.ZWART, EnumTypes.LOPER));
-        stuk.add(new Stukken(6,0, EnumSpeler.ZWART, EnumTypes.PAARD));
-        stuk.add(new Stukken(7,0, EnumSpeler.ZWART, EnumTypes.TOREN));
-        stuk.add(new Stukken(0,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(1,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(2,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(3,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(4,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(5,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(6,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(7,1, EnumSpeler.ZWART, EnumTypes.PION));
-        
-        
-        stuk.add(new Stukken(0,7, EnumSpeler.WIT, EnumTypes.TOREN));
-        stuk.add(new Stukken(1,7, EnumSpeler.WIT, EnumTypes.PAARD));
-        stuk.add(new Stukken(2,7, EnumSpeler.WIT, EnumTypes.LOPER));
-        stuk.add(new Stukken(3,7, EnumSpeler.WIT, EnumTypes.QUEEN));
-        stuk.add(new Stukken(4,7, EnumSpeler.WIT, EnumTypes.KONING));
-        stuk.add(new Stukken(5,7, EnumSpeler.WIT, EnumTypes.LOPER));
-        stuk.add(new Stukken(6,7, EnumSpeler.WIT, EnumTypes.PAARD));
-        stuk.add(new Stukken(7,7, EnumSpeler.WIT, EnumTypes.TOREN));
-        stuk.add(new Stukken(0,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(1,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(2,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(3,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(4,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(5,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(6,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(7,6, EnumSpeler.WIT, EnumTypes.PION));
-        */
-        //System.out.println(schaakbord);
-    
+        schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN);    
     }
-    public Stukken getInhoud(int x,int y){
-         if(x<0)return null;
-         if(x>=8)return null;
-         if(y<0)return null;
-         if(y>=8)return null;
-         return schaakbord[x][y];
+    
+    /**
+     * Krijg vakje op array-bord
+     * 
+     * @param i x-coordinaat op array-bord
+     * @param j y-coordinaat op array-bord
+     * @return een vak op het schaakbord
+     */
+    public Stukken getInhoud(int i,int j){
+         if(i<0)return null;
+         if(i>=8)return null;
+         if(j<0)return null;
+         if(j>=8)return null;
+         return schaakbord[i][j];
        }
+    
     }
     
     

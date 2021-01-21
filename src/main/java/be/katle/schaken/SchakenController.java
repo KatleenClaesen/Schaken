@@ -12,6 +12,7 @@ import Stukken.model.Paard;
 import Stukken.model.Pion;
 import Stukken.model.Queen;
 import Stukken.model.Schaken;
+import Stukken.model.Stukken;
 import Stukken.model.Toren;
 
 import java.io.FileNotFoundException;
@@ -25,6 +26,7 @@ import javafx.scene.layout.AnchorPane;
 import view.Stukken.PionnenView;
 import view.Stukken.BordView;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.util.Pair;
 import view.Stukken.KoningView;
 import view.Stukken.LoperView;
@@ -116,8 +118,10 @@ public class SchakenController {
         
         bord.getChildren().addAll(view);
         /* als er op het spelbord w geklikt gaat er gezien worden waar er geklikt w*/
-        bord.setOnMousePressed(this::test);
         
+        //Momenteel wordt enkel eindCo weergegeven
+        bord.setOnMousePressed(this::startCo);
+        bord.setOnMousePressed(this::eindCo);
         
         
         //update();
@@ -128,17 +132,54 @@ public class SchakenController {
 
     }
     private void start(ActionEvent e){
-       
-        
-      
-        
+        //Wat is het nut hiervan?
     }
+    
+    
     /**
-     * kijkt op welk speelstuk er geklikt is en gaat de coordinaten laten ophalen en veranderen naar de coordinaten waar de muis is losgelaten
-     * @param e 
+     * Welk vakje wil ik gebruiken? (Start)
+     * (weergegeven in coordinaten van de array)
+     * 
+     * Gebaseerd op RushHour
+     * 
+     * @param e mousevent
+     * @return Het i,j vakje van de array
      */
-    public void test(MouseEvent e){
-        /*if(viewToren.isOpToren(e.getX(), e.getY())){
+    public Stukken startCo(MouseEvent e){
+        double muisX = e.getX();
+        double muisY = e.getY();
+        int arrayI = (int) view.getI(muisX);
+        int arrayJ = (int) view.getJ(muisY);
+        //Geeft de i,j coordinaat van de array weer
+        System.out.println("Een" + arrayI + "," + arrayJ);
+        return model.getInhoud(arrayI, arrayJ);
+    }
+    
+    /**
+     * Naar welk vakje wil ik verplaatsen? (Einde)
+     * (weergegeven in coordinaten van de array)
+     * 
+     * @param e mousevent
+     * @return Het i,j vakje van de array
+     */
+    public Stukken eindCo(MouseEvent e){
+        double muisX = e.getX();
+        double muisY = e.getY();
+        int arrayII = (int) view.getI(muisX);
+        int arrayJJ = (int) view.getJ(muisY);
+        //Geeft de i,j coordinaat van de array weer
+        System.out.println("Twee" + arrayII + "," + arrayJJ);
+        return model.getInhoud(arrayII, arrayJJ);
+    }
+    
+    
+    
+    
+    
+/*    public void test2(MouseEvent e){
+        System.out.println(e.getX()+e.getY());
+    }
+*/        /*if(viewToren.isOpToren(e.getX(), e.getY())){
             viewToren.setOnMouseReleased(this::move);
         }
         //else if(viewPion.isOpPion(e.getX(), e.getY())){
@@ -238,7 +279,7 @@ public class SchakenController {
     }
     /**
      * the update method for all views
-     */}
+     */
     //private void update(){
         //view.update();
         //viewPion.updatePion();

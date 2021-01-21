@@ -5,6 +5,7 @@
  */
 package Stukken.model;
 
+import Bewegen.Beweging;
 import Speler.model.EnumSpeler;
 
 /**
@@ -12,8 +13,25 @@ import Speler.model.EnumSpeler;
  * @author Mathias
  */
 public class Pion extends Stukken{
-    public Pion(EnumSpeler enumSpeler, EnumTypes enumTypes) {
-        super(enumSpeler, enumTypes); 
+        
+    /**
+     * Constructor voor een Pion
+     * 
+     * @param enumSpeler Het type speler
+     * @param enumTypes Het type speelstuk
+     */
+    public Pion(EnumSpeler speler, EnumTypes type) {
+        super(speler, type); 
+    }    
+    
+    
+/*    public boolean juisteMove(int i, int j){
+        if (type == EnumTypes.PION || !Beweging.) {
+        }
+        else {
+        }    
+*/        
+        
     //private int x;
     /** y-coordinaat van het mannetjes */
     //private int y;
@@ -111,7 +129,6 @@ public class Pion extends Stukken{
         y= 600;
         x= 0;
     }
-        */
-    }  
+      */
     
 }
