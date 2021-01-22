@@ -123,7 +123,7 @@ public class SchakenController {
         //update();
         
         reset.setFocusTraversable(false);
-        //reset.setOnAction(this::reset);
+        reset.setOnAction(this::reset);
         
 
     }
@@ -239,28 +239,28 @@ public class SchakenController {
     /**
      * the update method for all views
      */}
-    //private void update(){
-        //view.update();
+    private void update(){
+        view.update();
         //viewPion.updatePion();
         //viewToren.update();
         //iewKoning.update();
         //viewQueen.updateQueen();
         //viewLoper.updateLoper();
         //viewPaard.updatePaard();
-    //}
+    }
     /**
      * the reset of all the pieces
      * 
      */
-    //private void reset(ActionEvent e){
-        //model.reset();
-        //modelPion.reset();
+    private void reset(ActionEvent e){
+        model.LeegBord();
+        model.ZetStukken();
         //modelToren.reset();
         //modelKoning.reset();
         //modelQueen.reset();
         //modelLoper.reset();
         //modelPaard.reset();
-        //update();
-    //}
+        update();
+    }
    
 }

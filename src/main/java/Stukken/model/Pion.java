@@ -11,9 +11,23 @@ import Speler.model.EnumSpeler;
  *
  * @author Mathias
  */
+
 public class Pion extends Stukken{
+    private int aantalMoves;
+    
     public Pion(EnumSpeler enumSpeler, EnumTypes enumTypes) {
         super(enumSpeler, enumTypes); 
+    }
+    public void PionMoves(){
+        if(aantalMoves == 0){
+            
+            aantalMoves++;
+        }
+        //else(){
+            
+        //}
+    }
+    
     //private int x;
     /** y-coordinaat van het mannetjes */
     //private int y;
@@ -114,4 +128,4 @@ public class Pion extends Stukken{
         */
     }  
     
-}
+

@@ -59,36 +59,7 @@ public class BordView extends Region{
         }
         
     }
-    /*private AnchorPane paneel;
-    private static final int RADIUS = 10;
-
-    public BordView(Schaken model) {
-        this.model = model;
-        createSmiley();
-        update();
-    }
     
-    public void update(){
-        
-        paneel.setTranslateX(this.model.getX());
-        paneel.setTranslateY(this.model.getY());
-        
-    }
-    private Paard modelPaard;
-    public void createSmiley(){
-        
-        paneel = new AnchorPane();
-        KoningView kv = new KoningView(new Koning());
-        PionnenView pv = new PionnenView(new Pion(1));
-        TorenView tv = new TorenView(new Toren());
-        QueenView qv = new QueenView(new Queen());
-        LoperView lv = new LoperView(new Loper());
-        //PaardView pav = new PaardView(Paard());
-        PionnenView pv2 = new PionnenView(new Pion(2));
-        //Paard pa = new Node("file:///D:/github/Schaken/afbeeldingen/Paard.png");
-        paneel.getChildren().addAll(tv,kv,pv,qv,lv,pv2);
-        
-    */
     
 }
     

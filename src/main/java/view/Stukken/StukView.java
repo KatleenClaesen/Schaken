@@ -63,6 +63,7 @@ public class StukView extends Region{
         
         
         if(Speler == ZWART){
+            
             Image paard = new Image(foto);
             PixelReader reader = paard.getPixelReader();
             int w = (int)paard.getWidth();

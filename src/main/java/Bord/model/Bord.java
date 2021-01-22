@@ -40,6 +40,9 @@ public class Bord {
             }
         }   
     }
+    /**
+     * zal de stukken op het bord plaatsen
+     */
     public void ZetStukken(){
         int x;
         for(x=0; x<8; x++){
@@ -65,43 +68,10 @@ public class Bord {
         schaakbord[5][7]= new Loper(EnumSpeler.WIT, EnumTypes.LOPER);
         schaakbord[6][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
         schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN); 
-        
-        /*stuk.add(new Stukken(2,0, EnumSpeler.ZWART, EnumTypes.LOPER));
-        stuk.add(new Stukken(3,0, EnumSpeler.ZWART, EnumTypes.QUEEN));
-        stuk.add(new Stukken(4,0, EnumSpeler.ZWART, EnumTypes.KONING));
-        stuk.add(new Stukken(5,0, EnumSpeler.ZWART, EnumTypes.LOPER));
-        stuk.add(new Stukken(6,0, EnumSpeler.ZWART, EnumTypes.PAARD));
-        stuk.add(new Stukken(7,0, EnumSpeler.ZWART, EnumTypes.TOREN));
-        stuk.add(new Stukken(0,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(1,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(2,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(3,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(4,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(5,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(6,1, EnumSpeler.ZWART, EnumTypes.PION));
-        stuk.add(new Stukken(7,1, EnumSpeler.ZWART, EnumTypes.PION));
-        
-        
-        stuk.add(new Stukken(0,7, EnumSpeler.WIT, EnumTypes.TOREN));
-        stuk.add(new Stukken(1,7, EnumSpeler.WIT, EnumTypes.PAARD));
-        stuk.add(new Stukken(2,7, EnumSpeler.WIT, EnumTypes.LOPER));
-        stuk.add(new Stukken(3,7, EnumSpeler.WIT, EnumTypes.QUEEN));
-        stuk.add(new Stukken(4,7, EnumSpeler.WIT, EnumTypes.KONING));
-        stuk.add(new Stukken(5,7, EnumSpeler.WIT, EnumTypes.LOPER));
-        stuk.add(new Stukken(6,7, EnumSpeler.WIT, EnumTypes.PAARD));
-        stuk.add(new Stukken(7,7, EnumSpeler.WIT, EnumTypes.TOREN));
-        stuk.add(new Stukken(0,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(1,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(2,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(3,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(4,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(5,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(6,6, EnumSpeler.WIT, EnumTypes.PION));
-        stuk.add(new Stukken(7,6, EnumSpeler.WIT, EnumTypes.PION));
-        */
-        //System.out.println(schaakbord);
-    
     }
+    
+    
+    
     public Stukken getInhoud(int x,int y){
          if(x<0)return null;
          if(x>=8)return null;
