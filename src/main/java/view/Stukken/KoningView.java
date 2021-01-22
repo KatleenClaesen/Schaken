@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view.Stukken;
 
 import Stukken.model.Koning;
@@ -12,7 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 
 /**
- *the view of the king
+ * De view van de Koning
  * @author Mathias
  */
 public class KoningView extends Region{/*

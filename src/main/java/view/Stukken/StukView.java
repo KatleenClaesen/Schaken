@@ -22,10 +22,11 @@ import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 
 /**
- *
+ * Een algemene view voor de stukken
  * @author Mathias
  */
 public class StukView extends Region{
+    
     private AnchorPane paneel;
     private Stukken modelStuk;
     private EnumSpeler Speler;
@@ -36,13 +37,13 @@ public class StukView extends Region{
     public StukView(Stukken model,String image, EnumSpeler Kleur){
         this.modelStuk = model;
         this.foto = image;
-        /* om de nodes op een afstand van 100 van de rand te laten verschijenen*/
+        /*om de nodes op een afstand van 100 van de rand te laten verschijenen */
         setLayoutX(100);
         setLayoutY(100);
         this.Speler = Kleur;
         //System.out.println(Speler);
  
-        findImagePaard(foto, Speler);
+        findImage(foto, Speler);
         getChildren().add(paneel);
         //updatePaard();
         
@@ -56,13 +57,22 @@ public class StukView extends Region{
         
         getChildren().addAll(paneel);
     }*/
-    public AnchorPane findImagePaard(String foto, EnumSpeler Speler){
+    
+    
+    
+    /**
+     * Het vinden van een afbeelding bij het juiste speelstuk
+     * 
+     * @param foto afbeelding van het stuk
+     * @param Speler Speler die bij het stuk hoort
+     * @return 
+     */
+    public AnchorPane findImage(String foto, EnumSpeler Speler){
         
         paneel = new AnchorPane();
         
-        
-        
         if(Speler == ZWART){
+
             
             Image paard = new Image(foto);
             PixelReader reader = paard.getPixelReader();
@@ -84,12 +94,11 @@ public class StukView extends Region{
             paneel.getChildren().add(imageView);  
            
             System.out.println("zwart");
-            return paneel;
-                   
+            return paneel;     
         }
         else if(Speler == WIT){
-            Image paard = new Image(foto);
-            ImageView imageView = new ImageView(paard);
+            Image afbeelding = new Image(foto);
+            ImageView imageView = new ImageView(afbeelding);
             imageView.setFitHeight(100);
             imageView.setFitWidth(100);
             imageView.setPreserveRatio(false);
@@ -97,12 +106,9 @@ public class StukView extends Region{
             
             System.out.println("wit");
             return paneel;
-            
         }
-        
         System.out.println("probleem");
         return paneel;
-        
     }
     
     

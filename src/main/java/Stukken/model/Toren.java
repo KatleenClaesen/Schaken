@@ -12,8 +12,15 @@ import Speler.model.EnumSpeler;
  * @author Mathias
  */
 public class Toren extends Stukken{
-    public Toren(EnumSpeler enumSpeler, EnumTypes enumTypes) {
-        super(enumSpeler, enumTypes); 
+        
+    /**
+     * Constructor voor een Toren
+     * 
+     * @param enumSpeler Het type speler
+     * @param enumTypes Het type speelstuk
+     */
+    public Toren(EnumSpeler speler, EnumTypes type) {
+        super(speler, type); 
     }
     
 }

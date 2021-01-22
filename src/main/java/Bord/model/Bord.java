@@ -1,7 +1,5 @@
 package Bord.model;
 
-
-
 import Bord.model.Vakken;
 import Speler.model.EnumSpeler;
 import Stukken.model.EnumTypes;
@@ -10,21 +8,26 @@ import Stukken.model.Toren;
 import java.util.HashSet;
 import view.Stukken.*;
 import Stukken.model.*;
+
+
 /**
- *
- * @author katle
+ * Het model van het speelbord
+ * @author Katleen
  */
 public class Bord {
-    private Stukken[][] schaakbord;
+    
+    public static Stukken[][] schaakbord;
     private EnumSpeler speler;
     private int speelstuk;
     private EnumTypes type;
     
     
-    //maak het bord
-    //zet speler, witte en zwarte stukken
     //reset het bord
 
+    
+    /**
+     * Constructor voor het schaakbord
+     */
     public Bord(){
         schaakbord = new Stukken[8][8];
         LeegBord();
@@ -32,6 +35,9 @@ public class Bord {
     }
    
     
+    /**
+     * Maak een leeg schaakbord (8x8)
+     */
     public void LeegBord(){
         schaakbord = new Stukken[8][8];
         for (int i=0; i<8; i++){
@@ -40,9 +46,7 @@ public class Bord {
             }
         }   
     }
-    /**
-     * zal de stukken op het bord plaatsen
-     */
+
     public void ZetStukken(){
         int x;
         for(x=0; x<8; x++){
@@ -67,18 +71,23 @@ public class Bord {
         schaakbord[4][7]= new Queen(EnumSpeler.WIT, EnumTypes.QUEEN);
         schaakbord[5][7]= new Loper(EnumSpeler.WIT, EnumTypes.LOPER);
         schaakbord[6][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
-        schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN); 
     }
-    
-    
-    
-    public Stukken getInhoud(int x,int y){
-         if(x<0)return null;
-         if(x>=8)return null;
-         if(y<0)return null;
-         if(y>=8)return null;
-         return schaakbord[x][y];
+    /**
+     * Krijg vakje op array-bord
+     * 
+     * @param i x-coordinaat op array-bord
+     * @param j y-coordinaat op array-bord
+     * @return een vak op het schaakbord
+     */
+    public Stukken getInhoud(int i,int j){
+         if(i<0)return null;
+         if(i>=8)return null;
+         if(j<0)return null;
+         if(j>=8)return null;
+         return schaakbord[i][j];
+
        }
+    
     }
     
     

@@ -17,6 +17,11 @@ public abstract class Stukken {
     int x;
     int y;
 
+    /**
+     * Constructor voor een stuk
+     * @param speler Van welke speler is het stuk
+     * @param type Wat voor type speelstuk is het
+     */
     public Stukken(EnumSpeler speler, EnumTypes type) {
         //this.x = i;
         //this.y = j;
@@ -24,20 +29,20 @@ public abstract class Stukken {
         this.type = type;
     }
     
-    
-    
-    
 
     /**
      * Krijg het type speler
+     * 
      * @return De speler
      */
     public EnumSpeler getSpeler() {
         return speler;
     }
 
+    
     /**
      * Krijg het type speelstuk
+     * 
      * @return Het type
      */
     public EnumTypes getType() {
@@ -45,4 +50,13 @@ public abstract class Stukken {
     }
     
     
+    /**
+     * Mag ik een bepaald speelstuk naar een bepaald vakje verplaatsen
+     * 
+     * @return true of false
+     */
+/*    public boolean juisteMove(){
+        return False;
+    }
+*/
 }

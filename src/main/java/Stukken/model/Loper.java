@@ -12,8 +12,15 @@ import Speler.model.EnumSpeler;
  * @author Mathias
  */
 public class Loper extends Stukken{
-    public Loper(EnumSpeler enumSpeler, EnumTypes enumTypes) {
-        super(enumSpeler, enumTypes); 
+        
+    /**
+     * Constructor voor een Loper
+     * 
+     * @param enumSpeler Het type speler
+     * @param enumTypes Het type speelstuk
+     */
+    public Loper(EnumSpeler speler, EnumTypes type) {
+        super(speler, type); 
     }
         
     

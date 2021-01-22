@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 package Bord.model;
-
-
 import javafx.scene.layout.Region;
+
 
 /**
  *
@@ -14,22 +13,36 @@ import javafx.scene.layout.Region;
  */
 public class Vakken extends Region{
     
-    
     private int X;
     private int Y;
-    private boolean dispPiece;
+    private boolean thisPiece;
 
-    
-
-    
-    
-    public Vakken( int i, int j){
         
+    /**
+     * Constructor voor een vak op het bord
+     * 
+     * @param i vak i(x) van het schaakbord
+     * @param j vak j(y) van het schaakbord
+     */
+    public Vakken(int i, int j){
         this.X = i*100;
         this.Y = j*100;
-        this.dispPiece= true;
-        
+        this.thisPiece= true;
+    }  
+
+    /**
+     * @return the X
+     */
+    public int getVakX() {
+        return X;
     }
 
+    /**
+     * @return the Y
+     */
+    public int getVakY() {
+        return Y;
+    }
+    
     
 }
