@@ -6,6 +6,7 @@
 package be.katle.schaken;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.net.URL;
@@ -19,6 +20,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -32,7 +34,7 @@ import javafx.stage.Stage;
 
 
 public class MenuController{
-    private static final String Queen = "file:///../../../../Muziek.mp3";
+    private static final String Queen = "SchaakMuziek.mp3";
     MediaPlayer mediaplayer;
 
     @FXML
@@ -45,12 +47,15 @@ public class MenuController{
     private Button muziek;
     
     @FXML
+    private Label tekst;
+    
+    @FXML
     void initialize(){
         start.setFocusTraversable(true);
         
         start.setOnAction(this::handle); 
         muziek.setOnAction(this::Muziek);
-            Image afbeelding = new Image("file:///D:/github/Schaken/afbeeldingen/background.png");
+            Image afbeelding = new Image("background.png");
             ImageView imageView = new ImageView(afbeelding);
         background.getChildren().add(imageView);
             
@@ -65,24 +70,15 @@ public class MenuController{
         catch (IOException e) {
                 e.printStackTrace();
                 }
-    }/*
-    private void background(){
-        Image afbeelding = new Image(foto);
-        ImageView background = new ImageView(afbeelding);
-        background.getChildren().add(imageView);
-    }*/
-    /**gives error
-     * Exception in thread "JavaFX Application Thread" java.lang.IllegalAccessError: class com.sun.media.jfxmediaimpl.platform.PlatformManager (in module javafx.media) cannot access class com.sun.javafx.PlatformUtil (in module javafx.base) because module javafx.base does not export com.sun.javafx to module javafx.media
-     * 
-     */
+    }
+    
     
     public void Muziek(ActionEvent event){
         
-        //ClassLoader classLoader = getClass().getClassLoader();
-        //URL resource = classLoader.getResource("Muziek.mp3");
-        Media media = new Media(Queen.toString());
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL test = classLoader.getResource("SchaakMuziek.mp3");
+        Media media = new Media(test.toString());
         mediaplayer = new MediaPlayer(media);
         mediaplayer.setAutoPlay(true);  
-        //mediaPlayer.play();
     }
 }

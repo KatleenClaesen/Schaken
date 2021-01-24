@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
@@ -79,5 +80,6 @@
       <TilePane id="leest iemand ooit alle namen?" layoutX="900.0" layoutY="100.0" prefHeight="800.0" prefWidth="2.0" style="-fx-background-color: Black;" />
       <TilePane id="oooh mooie zijkant" layoutX="100.0" layoutY="100.0" prefHeight="800.0" prefWidth="2.0" style="-fx-background-color: Black;" />
       <TilePane id="vergeet de onderkant niet" layoutX="100.0" layoutY="898.0" prefHeight="2.0" prefWidth="800.0" style="-fx-background-color: black;" />
+      <Label fx:id="speler" alignment="CENTER" contentDisplay="CENTER" layoutX="400.0" layoutY="50.0" prefWidth="200.0" text="Label" />
    </children>
 </AnchorPane>

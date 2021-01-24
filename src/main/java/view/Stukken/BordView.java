@@ -22,16 +22,15 @@ public class BordView extends Region{
     
     public BordView(Bord model){
         this.model = model;
-        update();
+        visual();
     }
-    
     
     /**
      * Maak bord visueel aan en zet op elke plaats (g)een stuk
      */
-    public void update(){
+    public void visual(){
         getChildren().clear();
-        Rectangle Bordje = new Rectangle(0,0,800,800);
+        Rectangle Bordje = new Rectangle(0,0,8*SIZE,8*SIZE);
         Color c = new Color(0,0,0,0);
         Bordje.setFill(c);
         getChildren().add(Bordje);
@@ -46,38 +45,4 @@ public class BordView extends Region{
             }
         }
     }
-    
-    /**
-     * Geef de I-coordinaat van de array
-     * 
-     * @param x de schermcoordinaat x (double)
-     * @return het arrayvakje op i (int)
-     */
-    public double getI(double x){
-        int i = (int) ((x-SIZE)/SIZE);
-        return i;
-    }
-   
-   /**
-     * Geef de J-coordinaat van de array
-     * 
-     * @param y de schermcoordinaat y (double)
-     * @return het arrayvakje op j (int)
-     */ 
-    public double getJ(double y){
-        int j = (int)((y-SIZE)/SIZE);
-        return j;
-    }
-    
-}   
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-
+}

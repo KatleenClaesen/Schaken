@@ -6,6 +6,7 @@
 package be.katle.schaken;
 
 import Bord.model.Bord;
+import Speler.model.EnumSpeler;
 import Stukken.model.Koning;
 import Stukken.model.Loper;
 import Stukken.model.Paard;
@@ -16,6 +17,7 @@ import Stukken.model.Stukken;
 import Stukken.model.Toren;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -27,6 +29,7 @@ import javafx.scene.layout.AnchorPane;
 import view.Stukken.BordView;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
 import javafx.util.Pair;
 
 import view.Stukken.StukView;
@@ -50,7 +53,9 @@ public class SchakenController {
     @FXML
     private Button menu;
 
-   
+    @FXML
+    private Label speler;
+
     /**
      * 
      */
@@ -61,15 +66,6 @@ public class SchakenController {
     private int beginx, beginy, eindx, eindy;
     
     /**
-     * getting the view and model of the pieces
-     */
-    public int mouseX;
-    public int mouseY;
-    
-    
-    
-    
-    /**
      * the initialization of the fxml
      */
 
@@ -77,28 +73,25 @@ public class SchakenController {
     void initialize() {
         model = new Bord();
         view = new BordView(model);
-        
-        
+
         bord.getChildren().addAll(view);
-        /* als er op het spelbord w geklikt gaat er gezien worden waar er geklikt w*/
-        
-        //Momenteel wordt enkel eindCo weergegeven
         bord.setOnMousePressed(this::startCo);
         bord.setOnMouseReleased(this::eindCo);
+        speler.setText("Wit is aan zet");
         
-        
-        //update();
-        
-        menu.setFocusTraversable(false);
-        menu.setOnAction(this::reset);
+        menu.setOnAction(this::Menu);
         
 
     }
-    private void reset(ActionEvent e){
-        //Wat is het nut hiervan?
+    private void Menu(ActionEvent e){
+        //System.out.println("Menu");
+        try{
+            App.setRoot("MenuFXML");}
+        catch (IOException ex) {
+                ex.printStackTrace();
+                }
     }
-    
-    
+
     /**
      * Welk vakje wil ik gebruiken? (Start)
      * (weergegeven in coordinaten van de array)
@@ -109,8 +102,6 @@ public class SchakenController {
      * @return Het i,j vakje van de array
      */
     public Stukken startCo(MouseEvent e){
-        //double mouseX = e.getX();
-        //double mouseY = e.getY();
         beginx = (int) model.getI(e.getX());
         beginy = (int) model.getJ(e.getY());
         model.getStukOp(eindx, eindy);
@@ -118,7 +109,7 @@ public class SchakenController {
             Stukken[] stukkens = model.schaakbord[i];
         }
         //Geeft de i,j coordinaat van de array weer
-        System.out.println("Start" + ":" + "" + beginx + "," + beginy);
+        //System.out.println("Start" + ":" + "" + beginx + "," + beginy);
         stuk = model.getInhoud(beginx, beginy);
         model.neemStukOp(beginx, beginy);
         return model.getInhoud(beginx, beginy);
@@ -132,14 +123,12 @@ public class SchakenController {
      * @return Het i,j vakje van de array
      */
     public void eindCo(MouseEvent e){
-        System.out.println(stuk);
-        double mouseX = e.getX();
-        double mouseY = e.getY();
-        eindx = (int) model.getI(mouseX);
-        eindy = (int) model.getJ(mouseY);
+        //System.out.println(stuk);
+        eindx = (int) model.getI(e.getX());
+        eindy = (int) model.getJ(e.getY());
         model.getStukOp(eindx, eindy);
         //Geeft de i,j coordinaat van de array weer
-        System.out.println("Einde" + ":" + "" + eindx + "," + eindy);
+        //System.out.println("Einde" + ":" + "" + eindx + "," + eindy);
         model.getInhoud(eindx,eindy);
 
         // Bij het effectief verplaatsen van het stuk werd geholpen door de neef van Katleen
@@ -147,119 +136,19 @@ public class SchakenController {
                && stuk.geldigeZet(beginx, beginy, eindx, eindy) == true
                && stuk.binnenBord(beginx, beginy, eindx, eindy) == true) {
             model.zetneer(stuk, eindx, eindy);
+            if (stuk.getSpeler() == EnumSpeler.ZWART){
+            speler.setText("Wit is aan zet");
+            }
+            if (stuk.getSpeler() == EnumSpeler.WIT){
+            speler.setText("Zwart is aan zet");
+            }
+            view.visual();
         } 
         else { 
             model.zetneer(stuk, beginx, beginy); //Zet op originele plaats
         }
         
-        view.update();
+        
     }
     
 }
-    
-    
-/*    public void test2(MouseEvent e){
-        System.out.println(e.getX()+e.getY());
-    }
-*/        /*if(viewToren.isOpToren(e.getX(), e.getY())){
-            viewToren.setOnMouseReleased(this::move);
-        }
-        //else if(viewPion.isOpPion(e.getX(), e.getY())){
-            //viewPion.setOnMouseReleased(this::movePion);
-        //}
-        else if(viewKoning.isOpKoning(e.getX(), e.getY())){
-            viewKoning.setOnMouseReleased(this::moveKoning);
-        }
-        else if(viewQueen.isOpQueen(e.getX(), e.getY())){
-            viewQueen.setOnMouseReleased(this::moveQueen);
-        }
-        else if(viewLoper.isOpLoper(e.getX(), e.getY())){
-            viewLoper.setOnMouseReleased(this::moveLoper);
-        }
-        //else if(viewPaard.isOpPaard(e.getX(),e.getY())){
-            //viewPaard.setOnMouseReleased(this::movePaard);
-        //}
-  
-    }
-    /**
-     * gaat de coordinaten van het speelstuk ophalen en doorgeven aan de view
-     * @param e 
-     */
-    /*
-    public void move(MouseEvent e){
-        this.mouseX = (int) e.getX();
-        this.mouseY = (int) e.getY();
-        this.modelToren.temp_x = mouseX;
-        this.modelToren.temp_y = mouseY;
-        modelToren.newX();
-        modelToren.newY();
-        viewToren.update();
-       
-        System.out.println(mouseX+","+mouseY);
-    }
-    /**move voor de pion*/
-    /*public void movePion(MouseEvent e){
-        this.mouseX = (int) e.getX();
-        this.mouseY = (int) e.getY();
-        this.modelPion.temp_x = mouseX;
-        this.modelPion.temp_y = mouseY;
-        Pair<Integer,Integer> p = new Pair(mouseX,mouseY);
-        p.getKey();
-        modelPion.newX();
-        modelPion.newY();
-        viewPion.updatePion();
-       
-        System.out.println(mouseX+","+mouseY);
-    }
-    *//*
-    public void moveKoning(MouseEvent e){
-        this.mouseX = (int) e.getX();
-        this.mouseY = (int) e.getY();
-        this.modelKoning.temp_x = mouseX;
-        this.modelKoning.temp_y = mouseY;
-        modelKoning.newX();
-        modelKoning.newY();
-        viewKoning.update();
-       
-        System.out.println(mouseX+","+mouseY);
-    }
-    /**move van de Queen*//*
-    public void moveQueen(MouseEvent e){
-        this.mouseX = (int) e.getX();
-        this.mouseY = (int) e.getY();
-        this.modelQueen.temp_x = mouseX;
-        this.modelQueen.temp_y = mouseY;
-        modelQueen.newX();
-        modelQueen.newY();
-        viewQueen.updateQueen();
-       
-        System.out.println(mouseX+","+mouseY);
-    }
-    
-    public void moveLoper(MouseEvent e){
-        this.mouseX = (int) e.getX();
-        this.mouseY = (int) e.getY();
-        this.modelLoper.temp_x = mouseX;
-        this.modelLoper.temp_y = mouseY;
-        modelLoper.newX();
-        modelLoper.newY();
-        viewLoper.updateLoper();
-       
-        System.out.println(mouseX+","+mouseY);
-    }
-    
-    /*public void movePaard(MouseEvent e){
-        this.mouseX = (int) e.getX();
-        this.mouseY = (int) e.getY();
-        this.modelPaard.temp_x = mouseX;
-        this.modelPaard.temp_y = mouseY;
-        modelPaard.newX();
-        modelPaard.newY();
-        viewPaard.updatePaard();
-       
-        System.out.println(mouseX+","+mouseY);
-    }
-    /**
-     * the update method for all views
-}/*/
-        

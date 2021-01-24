@@ -1,6 +1,5 @@
 package Bord.model;
 
-import Bord.model.Vakken;
 import Speler.model.EnumSpeler;
 import Stukken.model.EnumTypes;
 import Stukken.model.Stukken;
@@ -36,18 +35,7 @@ public class Bord {
     }
    
     
-    /**
-     * Maak een leeg schaakbord (8x8)
-     */
-    /*public void LeegBord(){
-        schaakbord = new Stukken[8][8];
-        for (int i=0; i<8; i++){
-            for (int j=0; j<8; j++){
-              schaakbord[i][j]= new Stukken(speler,type) {}; 
-            }
-        }   
-    }
-*/
+    
     public void ZetStukken(){
         int x;
         for(x=0; x<8; x++){
