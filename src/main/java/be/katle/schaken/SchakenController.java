@@ -23,16 +23,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import view.Stukken.PionnenView;
+
 import view.Stukken.BordView;
 import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.util.Pair;
-import view.Stukken.KoningView;
-import view.Stukken.LoperView;
+
 import view.Stukken.StukView;
-import view.Stukken.QueenView;
-import view.Stukken.TorenView;
 
 
 public class SchakenController {
@@ -60,31 +57,15 @@ public class SchakenController {
     private Bord model;
     private BordView view;
     
+    private Stukken stuk = null;
+    private int beginx, beginy, eindx, eindy;
+    
     /**
      * getting the view and model of the pieces
      */
     public int mouseX;
     public int mouseY;
     
-    private Pion modelPion;
-    private Pion modelPion2;
-    private PionnenView viewPion;
-    private PionnenView viewPion2;
-    
-    private Toren modelToren;
-    private TorenView viewToren;
-    
-    private Koning modelKoning;
-    private KoningView viewKoning;
-    
-    private Queen modelQueen;
-    private QueenView viewQueen;
-    
-    private Loper modelLoper;
-    private LoperView viewLoper;
-    
-    private Paard modelPaard;
-    private StukView viewPaard;
     
     
     
@@ -95,23 +76,7 @@ public class SchakenController {
     @FXML
     void initialize() {
         model = new Bord();
-        //modelPion = new Pion(1);
-        //modelPion2 = new Pion(2);
-       //modelToren = new Toren();
-        //modelKoning = new Koning();
-        //modelQueen = new Queen();
-        //modelLoper = new Loper();
-        //modelPaard = new Paard();
-        
-         
         view = new BordView(model);
-        //viewPion = new PionnenView(modelPion);
-        //viewToren = new TorenView(modelToren);
-        //viewKoning = new KoningView(modelKoning);
-        //viewQueen = new QueenView(modelQueen);
-        //viewLoper = new LoperView(modelLoper);
-        //viewPaard = new PaardView(modelPaard);
-        //viewPion2 = new PionnenView(modelPion2);
         
         
         bord.getChildren().addAll(view);
@@ -119,7 +84,7 @@ public class SchakenController {
         
         //Momenteel wordt enkel eindCo weergegeven
         bord.setOnMousePressed(this::startCo);
-        bord.setOnMousePressed(this::eindCo);
+        bord.setOnMouseReleased(this::eindCo);
         
         
         //update();
@@ -144,13 +109,19 @@ public class SchakenController {
      * @return Het i,j vakje van de array
      */
     public Stukken startCo(MouseEvent e){
-        double muisX = e.getX();
-        double muisY = e.getY();
-        int arrayI = (int) view.getI(muisX);
-        int arrayJ = (int) view.getJ(muisY);
+        //double mouseX = e.getX();
+        //double mouseY = e.getY();
+        beginx = (int) model.getI(e.getX());
+        beginy = (int) model.getJ(e.getY());
+        model.getStukOp(eindx, eindy);
+        for (int i = 0; i < model.schaakbord.length; i++) {
+            Stukken[] stukkens = model.schaakbord[i];
+        }
         //Geeft de i,j coordinaat van de array weer
-        System.out.println("Een" + arrayI + "," + arrayJ);
-        return model.getInhoud(arrayI, arrayJ);
+        System.out.println("Start" + ":" + "" + beginx + "," + beginy);
+        stuk = model.getInhoud(beginx, beginy);
+        model.neemStukOp(beginx, beginy);
+        return model.getInhoud(beginx, beginy);
     }
     
     /**
@@ -160,16 +131,29 @@ public class SchakenController {
      * @param e mousevent
      * @return Het i,j vakje van de array
      */
-    public Stukken eindCo(MouseEvent e){
-        double muisX = e.getX();
-        double muisY = e.getY();
-        int arrayII = (int) view.getI(muisX);
-        int arrayJJ = (int) view.getJ(muisY);
+    public void eindCo(MouseEvent e){
+        System.out.println(stuk);
+        double mouseX = e.getX();
+        double mouseY = e.getY();
+        eindx = (int) model.getI(mouseX);
+        eindy = (int) model.getJ(mouseY);
+        model.getStukOp(eindx, eindy);
         //Geeft de i,j coordinaat van de array weer
-        System.out.println("Twee" + arrayII + "," + arrayJJ);
-        return model.getInhoud(arrayII, arrayJJ);
+        System.out.println("Einde" + ":" + "" + eindx + "," + eindy);
+        model.getInhoud(eindx,eindy);
+
+        // Bij het effectief verplaatsen van het stuk werd geholpen door de neef van Katleen
+        if (stuk.juisteMove(beginx, beginy, eindx, eindy) == true
+               && stuk.geldigeZet(beginx, beginy, eindx, eindy) == true
+               && stuk.binnenBord(beginx, beginy, eindx, eindy) == true) {
+            model.zetneer(stuk, eindx, eindy);
+        } 
+        else { 
+            model.zetneer(stuk, beginx, beginy); //Zet op originele plaats
+        }
+        
+        view.update();
     }
-    
     
 }
     

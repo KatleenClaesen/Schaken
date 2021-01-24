@@ -1,54 +1,137 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Stukken.model;
 
-import Bewegen.Beweging;
 import Speler.model.EnumSpeler;
 
+
 /**
- *
- * @author Mathias
+ * Model voor een Pion
+ * 
+ * @author Katleen (+ onderaan Mathias)
  */
 
-public class Pion extends Stukken{
+public class Pion extends Stukken {
 
-
-        
     /**
      * Constructor voor een Pion
-     * 
-     * @param enumSpeler Het type speler
-     * @param enumTypes Het type speelstuk
+     *
+     * @param speler Het type speler
+     * @param type   Het type speelstuk
      */
     public Pion(EnumSpeler speler, EnumTypes type) {
-        super(speler, type); 
-    }    }
-    
-    
-/*    public boolean juisteMove(int i, int j){
-        if (type == EnumTypes.PION || !Beweging.) {
-        }
+        super(speler, type);
+    }
+
+
+    /**
+     * Maken we een geldige beweging?
+     *
+     * @param beginx De Startcoordinaat x
+     * @param beginy De Startcoordinaat y
+     * @param eindx  De Nieuwe x-coordinaat
+     * @param eindy De Nieuwe y-coordinaat
+     */
+    @Override
+    public boolean juisteMove(int beginx, int beginy, int eindx, int eindy) {
+        boolean okezet = false;
+           
+        //Voor de witte pionnen
+        if (speler == EnumSpeler.WIT){
+            if (beginy - 1 == eindy && beginx == eindx) { // 1 naar boven
+                okezet = true;
+            }
+            else if (beginx + 1 == eindx && beginy - 1 == eindy) { //Rechts boven pakken
+                okezet = true;
+            }
+            else if (beginx - 1 == eindx && beginy - 1 == eindy) { //Links boven pakken
+                okezet = true;
+            }
+            //Voor de eerste zet van de witte pionnen
+            else if (beginy == 6){
+                if (beginy -2 == eindy && beginx == eindx) { //2 stappen zetten mag
+                    okezet = true;
+                }
+                else {
+                    okezet = false;
+                }
+            }
+            else{
+            okezet = false;
+            }
+        } 
+          
+        //Voor de zwarte pionnen    
         else {
-        }    
-*/        
-        
-
-    //private int x;
-    /** y-coordinaat van het mannetjes */
-    //private int y;
+            if (beginy + 1 == eindy && beginx == eindx) { // 1 naar Boven
+                okezet = true;
+            }
+            else if (beginx - 1 == eindx && beginy + 1 == eindy) { //Links boven pakken
+                okezet = true;
+            }
+            else if (beginx + 1 == eindx && beginy +1 == eindy) { //Rechts onder pakken
+                okezet = true;
+            }
+            //Voor de eerste zet van de zwarte pionnen
+            else if (beginy == 1){
+                if (beginy + 2 == eindy && beginx == eindx) { //2 stappen zetten mag JUIST
+                    okezet = true;
+                }
+                else {
+                    okezet = false;
+                }
+            }    
+        }
+    System.out.println(okezet);
+    return okezet;
+    }
+}        
     
-    //public int temp_x;
-    //public int temp_y;
+  
     
-    //private int startX;
-    //private int startY;
-    //private int i;
+    
+//////////////////////////////////////////
+// Toegepaste versie van klasse Schaken //
+// Gemaakt door MATHIAS                 //
+//////////////////////////////////////////
+    
+    
+//private int x;
+/**
+ * y-coordinaat van het mannetjes  constructor voor een wandelaar die in de oorsprong begint
+ * public Pionnen(int i, int j) {
+ * <p>
+ * this.x = startX;
+ * this.y = startY;
+ * <p>
+ * <p>
+ * }
+ * Pionnen(int i) {
+ * this.x= i *100;
+ * this.y= 600;
+ * }
+ * <p>
+ * /**
+ * constructor voor wandelaar op opgegeven positie
+ *
+ * @param x x-coordinaat
+ * @param y y-coordinaat
+ * public Pionnen(int x, int y) {
+ * this.x = x;
+ * this.y = y;
+ * <p>
+ * }
+ */
+//private int y;
 
-    /** constructor voor een wandelaar die in de oorsprong begint 
-     */    
+//public int temp_x;
+//public int temp_y;
+
+//private int startX;
+//private int startY;
+//private int i;
+
+/** constructor voor een wandelaar die in de oorsprong begint
+ */
     
     /*public Pion(int i){
         startX= 0;
@@ -60,31 +143,31 @@ public class Pion extends Stukken{
         
     }
     */
-    /**public Pionnen(int i, int j) {
-        
-        this.x = startX;
-        this.y = startY;
-       
-       
-    }
-    */
-    /**Pionnen(int i) {
-       this.x= i *100;
-       this.y= 600;
-    }
-    
-    /**
-     * constructor voor wandelaar op opgegeven positie
-     * 
-     * @param x x-coordinaat
-     * @param y y-coordinaat
-     */
-    /**public Pionnen(int x, int y) {
-        this.x = x;
-        this.y = y;
-        
-    }
-    */
+/**public Pionnen(int i, int j) {
+
+ this.x = startX;
+ this.y = startY;
+
+
+ }
+ */
+/**Pionnen(int i) {
+ this.x= i *100;
+ this.y= 600;
+ }
+
+ /**
+ * constructor voor wandelaar op opgegeven positie
+ *
+ * @param x x-coordinaat
+ * @param y y-coordinaat
+ */
+/**public Pionnen(int x, int y) {
+ this.x = x;
+ this.y = y;
+
+ }
+ */
     /*
     public void newX(){
         if(temp_x>0 && temp_x<100){
@@ -135,4 +218,3 @@ public class Pion extends Stukken{
     }
       */
     
-

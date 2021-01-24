@@ -1,8 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+///////////////////////////////////////////////////////////////////
+// Eerdere vorm van movement                                     //
+// Gemaakt tijdens vakantie toen array nog niet gekend was       //
+// Dit werd gebaseerd op de FXML                                 //
+// In klasse pionnen staat een toegepast voorbeeld in commentaar //
+// Gemaakt door MATHIAS                                          //
+///////////////////////////////////////////////////////////////////
+
 package Stukken.model;
 
 /**

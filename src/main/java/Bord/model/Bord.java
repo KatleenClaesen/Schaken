@@ -8,6 +8,7 @@ import Stukken.model.Toren;
 import java.util.HashSet;
 import view.Stukken.*;
 import Stukken.model.*;
+import static view.Stukken.BordView.SIZE;
 
 
 /**
@@ -30,7 +31,7 @@ public class Bord {
      */
     public Bord(){
         schaakbord = new Stukken[8][8];
-        LeegBord();
+        //LeegBord();
         ZetStukken();
     }
    
@@ -38,7 +39,7 @@ public class Bord {
     /**
      * Maak een leeg schaakbord (8x8)
      */
-    public void LeegBord(){
+    /*public void LeegBord(){
         schaakbord = new Stukken[8][8];
         for (int i=0; i<8; i++){
             for (int j=0; j<8; j++){
@@ -46,7 +47,7 @@ public class Bord {
             }
         }   
     }
-
+*/
     public void ZetStukken(){
         int x;
         for(x=0; x<8; x++){
@@ -88,8 +89,66 @@ public class Bord {
          return schaakbord[i][j];
 
        }
+  /**
+     * Geef de I-coordinaat van de array
+     * 
+     * @param x de schermcoordinaat x (double)
+     * @return het arrayvakje op i (int)
+     */
+    public double getI(double x){
+        int i = (int)((x-SIZE)/SIZE);
+        return i;
+    }
+   
     
+   /**
+     * Geef de J-coordinaat van de array
+     * 
+     * @param y de schermcoordinaat y (double)
+     * @return het arrayvakje op j (int)
+     */ 
+    public double getJ(double y){
+        int j = (int)((y-SIZE)/SIZE);
+        return j;
     }
     
     
+    /**
+     * Krijg het stuk op een bepaald vakje
+     * 
+     * @param x x-coordinaat van het scherm
+     * @param y y-coordinaat van het scherm
+     */
+    public void getStukOp(int x, int y){
+        if (schaakbord[x][y] instanceof Stukken){
+            getInhoud(x,y);
+            System.out.println("Stuk" + ":" + "" + getInhoud(x,y) + "" + "gelukt");
+        } 
+    }
 
+    
+    /**
+     * Neem een stuk op de gekozen plaats
+     * 
+     * @param x gekozen x-coordinaat
+     * @param y gekozen y-coordinaat
+     */
+    public void neemStukOp(int x, int y) {
+        schaakbord[x][y] = null;
+    }
+
+    
+    /**
+     * Zet een stuk neer op een gekozen plaats
+     * 
+     * @param stuk Het genomen stuk
+     * @param xcor De gekozen x-coordinaat
+     * @param ycor De gekozen y-coordinaat
+     * 
+     * Hierbij werd geholpen door de neef van Katleen
+     */
+    public void zetneer(Stukken stuk, int xcor, int ycor) {
+        schaakbord[xcor][ycor] = stuk;
+    } 
+
+}

@@ -1,46 +1,34 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package view.Stukken;
 
 import Bord.model.Bord;
 
-import Stukken.model.Schaken;
-import Stukken.model.Toren;
-import Stukken.model.Koning;
-import Stukken.model.Loper;
-import Stukken.model.Paard;
-import Stukken.model.Pion;
-import Stukken.model.Queen;
 import Stukken.model.Stukken;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Arc;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 
 /**
  * De view van het bord
  * 
- * @author 
+ * @author Mathias
  */
 public class BordView extends Region{
     private Bord model;
     public static final int SIZE = 100;
+    private Stukken stuk;
     
     public BordView(Bord model){
         this.model = model;
         update();
     }
     
+    
+    /**
+     * Maak bord visueel aan en zet op elke plaats (g)een stuk
+     */
     public void update(){
         getChildren().clear();
         Rectangle Bordje = new Rectangle(0,0,800,800);
@@ -52,15 +40,12 @@ public class BordView extends Region{
             for(int j=0; j< 8; j++ ){
                 Stukken stuk = model.getInhoud(i,j);
                 Node view = ViewSpeelStukken.createNode(stuk);
-                view.setTranslateX(i*100);
-                view.setTranslateY(j*100);
+                view.setTranslateX(i*SIZE);
+                view.setTranslateY(j*SIZE);
                 getChildren().add(view);
             }
         }
     }
-
-
-    
     
     /**
      * Geef de I-coordinaat van de array
@@ -85,6 +70,7 @@ public class BordView extends Region{
     }
     
 }   
+    
     
     
     
