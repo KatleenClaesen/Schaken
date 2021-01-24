@@ -84,23 +84,14 @@ public class BordView extends Region{
         return j;
     }
     
+}   
     
     
     
     
     
     
-    /*private AnchorPane paneel;
-    private static final int RADIUS = 10;
 
-    public BordView(Schaken model) {
-        this.model = model;
-        createSmiley();
-        update();
-    }
-
-    
-}
     
     
 

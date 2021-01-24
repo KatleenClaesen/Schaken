@@ -48,14 +48,12 @@ public class SchakenController {
     @FXML
     private AnchorPane bord;
 
-    @FXML
-    private AnchorPane testPlane;
+    
 
     @FXML
-    private Button reset;
+    private Button menu;
 
-    @FXML
-    private AnchorPane Pion;
+   
     /**
      * 
      */
@@ -126,12 +124,12 @@ public class SchakenController {
         
         //update();
         
-        reset.setFocusTraversable(false);
-        reset.setOnAction(this::reset);
+        menu.setFocusTraversable(false);
+        menu.setOnAction(this::reset);
         
 
     }
-    private void start(ActionEvent e){
+    private void reset(ActionEvent e){
         //Wat is het nut hiervan?
     }
     

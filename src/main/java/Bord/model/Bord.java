@@ -71,6 +71,7 @@ public class Bord {
         schaakbord[4][7]= new Queen(EnumSpeler.WIT, EnumTypes.QUEEN);
         schaakbord[5][7]= new Loper(EnumSpeler.WIT, EnumTypes.LOPER);
         schaakbord[6][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
+        schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN);
     }
     /**
      * Krijg vakje op array-bord

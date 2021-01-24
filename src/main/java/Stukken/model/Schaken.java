@@ -85,7 +85,7 @@ public class Schaken {
         y= 525;
         x= 725;
     }
-        
+        //schaakbord[this.i]
         
     
 }
