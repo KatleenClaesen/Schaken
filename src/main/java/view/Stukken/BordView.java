@@ -18,7 +18,7 @@ import javafx.scene.shape.Rectangle;
 public class BordView extends Region{
     private Bord model;
     public static final int SIZE = 100;
-    private Stukken stuk;
+
     
     public BordView(Bord model){
         this.model = model;

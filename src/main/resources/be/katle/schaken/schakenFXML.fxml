@@ -72,7 +72,7 @@
       <TilePane id="8F" layoutX="700.0" layoutY="300.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
       <TilePane id="8G" layoutX="700.0" layoutY="200.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: white;" />
       <TilePane id="8H" layoutX="700.0" layoutY="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: black;" />
-      <Button fx:id="menu" layoutX="815.0" layoutY="15.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="170.0" style="-fx-border-color: Red; -fx-background-color: ivory;" text="Return to Menu">
+      <Button fx:id="menu" layoutX="897.0" layoutY="15.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="88.0" style="-fx-border-color: Red; -fx-background-color: ivory;" text="Menu">
          <font>
             <Font size="20.0" />
          </font></Button>
@@ -80,6 +80,10 @@
       <TilePane id="leest iemand ooit alle namen?" layoutX="900.0" layoutY="100.0" prefHeight="800.0" prefWidth="2.0" style="-fx-background-color: Black;" />
       <TilePane id="oooh mooie zijkant" layoutX="100.0" layoutY="100.0" prefHeight="800.0" prefWidth="2.0" style="-fx-background-color: Black;" />
       <TilePane id="vergeet de onderkant niet" layoutX="100.0" layoutY="898.0" prefHeight="2.0" prefWidth="800.0" style="-fx-background-color: black;" />
-      <Label fx:id="speler" alignment="CENTER" contentDisplay="CENTER" layoutX="400.0" layoutY="50.0" prefWidth="200.0" text="Label" />
+      <Label fx:id="speler" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="21.0" prefHeight="64.0" prefWidth="800.0" text="Wit is aan zet">
+         <font>
+            <Font size="43.0" />
+         </font></Label>
+      <Button fx:id="muziek" alignment="CENTER" layoutX="915.0" layoutY="138.0" mnemonicParsing="false" text="Muziek" />
    </children>
 </AnchorPane>

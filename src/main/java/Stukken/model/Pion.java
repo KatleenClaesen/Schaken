@@ -1,7 +1,7 @@
 
 package Stukken.model;
 
-import Speler.model.EnumSpeler;
+import Bord.model.EnumSpeler;
 
 
 /**
@@ -81,7 +81,7 @@ public class Pion extends Stukken {
                 }
             }    
         }
-    System.out.println(okezet);
+//    System.out.println(okezet);
     return okezet;
     }
 }        
@@ -89,10 +89,11 @@ public class Pion extends Stukken {
   
     
     
-//////////////////////////////////////////
-// Toegepaste versie van klasse Schaken //
-// Gemaakt door MATHIAS                 //
-//////////////////////////////////////////
+/////////////////////////////////////////////////
+// Toegepaste versie van klasse Schaken        //
+// Wordt in het eindproduct niet meer gebruikt //
+// Gemaakt door MATHIAS                        //
+/////////////////////////////////////////////////
     
     
 //private int x;

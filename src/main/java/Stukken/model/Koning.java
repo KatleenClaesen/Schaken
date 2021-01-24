@@ -1,7 +1,7 @@
  
 package Stukken.model;
 
-import Speler.model.EnumSpeler;
+import Bord.model.EnumSpeler;
 
 /**
  * Model van een Koning
@@ -61,7 +61,7 @@ public class Koning extends Stukken {
         else{
         okezet = false;
         }
-    System.out.println(okezet);
+//    System.out.println(okezet);
     return okezet;
     }    
 }

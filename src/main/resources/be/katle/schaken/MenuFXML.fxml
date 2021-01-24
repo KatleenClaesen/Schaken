@@ -13,7 +13,6 @@
             <Font size="45.0" />
          </font>
       </Button>
-      <Button fx:id="muziek" blendMode="SRC_ATOP" layoutX="888.0" layoutY="46.0" mnemonicParsing="false" text="play  Muziek" />
       <Label fx:id="tekst" alignment="BOTTOM_CENTER" layoutX="350.0" layoutY="200.0" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: darkgray;" text="Schaken" textFill="#e11c1c">
          <font>
             <Font size="72.0" />

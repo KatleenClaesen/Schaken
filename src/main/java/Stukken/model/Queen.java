@@ -1,7 +1,7 @@
 
 package Stukken.model;
 
-import Speler.model.EnumSpeler;
+import Bord.model.EnumSpeler;
 
 /**
  * Model voor een Queen
@@ -44,7 +44,7 @@ public class Queen extends Stukken {
         else{
         okezet = false;
         }
-    System.out.println(okezet);
+//    System.out.println(okezet);
     return okezet;
     }    
 }

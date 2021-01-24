@@ -1,9 +1,9 @@
 
 package view.Stukken;
 
-import Speler.model.EnumSpeler;
-import static Speler.model.EnumSpeler.WIT;
-import static Speler.model.EnumSpeler.ZWART;
+import Bord.model.EnumSpeler;
+import static Bord.model.EnumSpeler.WIT;
+import static Bord.model.EnumSpeler.ZWART;
 import Stukken.model.Stukken;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,7 +30,7 @@ public class StukView extends Region{
     public StukView(Stukken model,String image, EnumSpeler Kleur){
         this.modelStuk = model;
         this.foto = image;
-        /*om de nodes op een afstand van 100 van de rand te laten verschijenen */
+        /*om de nodes op een afstand van SIZE van de rand te laten verschijenen */
         setLayoutX(SIZE);
         setLayoutY(SIZE);
         this.Speler = Kleur;
@@ -69,7 +69,7 @@ public class StukView extends Region{
             imageView.setPreserveRatio(false);
             paneel.getChildren().add(imageView);  
            
-            //System.out.println("zwart");
+//            System.out.println("zwart");
             return paneel;     
         }
         else if(Speler == WIT){
@@ -80,7 +80,7 @@ public class StukView extends Region{
             imageView.setPreserveRatio(false);
             paneel.getChildren().add(imageView);
             
-            //System.out.println("wit");
+//            System.out.println("wit");
             return paneel;
         }
         System.out.println("probleem");

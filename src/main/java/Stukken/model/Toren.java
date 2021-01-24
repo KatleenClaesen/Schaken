@@ -1,6 +1,6 @@
 package Stukken.model;
 
-import Speler.model.EnumSpeler;
+import Bord.model.EnumSpeler;
 
 /**
  * Model van een Toren
@@ -33,13 +33,13 @@ public class Toren extends Stukken {
         boolean okezet = false;
         
         if (beginy == eindy && eindx < 8 && eindx > -1) { // Verticaal bewegen
-            System.out.println("Niet geldige torenbeweging");
+//            System.out.println("Niet geldige torenbeweging");
             okezet = true;
         } 
         else if (beginx == eindx && eindy < 8 && eindy > -1){ //Horizontaal bewegen
             okezet = true;
         }
-    System.out.println(okezet);
+//    System.out.println(okezet);
     return okezet;     
     }
 }        

@@ -1,22 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package be.katle.schaken;
 
 import Bord.model.Bord;
-import Speler.model.EnumSpeler;
-import Stukken.model.Koning;
-import Stukken.model.Loper;
-import Stukken.model.Paard;
-import Stukken.model.Pion;
-import Stukken.model.Queen;
-import Stukken.model.Schaken;
+import Bord.model.EnumSpeler;
 import Stukken.model.Stukken;
-import Stukken.model.Toren;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -28,11 +16,9 @@ import javafx.scene.layout.AnchorPane;
 
 import view.Stukken.BordView;
 import javafx.event.ActionEvent;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.util.Pair;
-
-import view.Stukken.StukView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 public class SchakenController {
@@ -48,7 +34,8 @@ public class SchakenController {
     @FXML
     private AnchorPane bord;
 
-    
+    @FXML
+    private Button muziek;
 
     @FXML
     private Button menu;
@@ -64,9 +51,12 @@ public class SchakenController {
     
     private Stukken stuk = null;
     private int beginx, beginy, eindx, eindy;
+    MediaPlayer mediaplayer;
     
     /**
      * the initialization of the fxml
+     * 
+     * @author Mathias en Katleen
      */
 
     @FXML
@@ -81,10 +71,12 @@ public class SchakenController {
         
         menu.setOnAction(this::Menu);
         
+        muziek.setOnAction(this::Muziek);
+        
 
     }
     private void Menu(ActionEvent e){
-        //System.out.println("Menu");
+//        System.out.println("Menu");
         try{
             App.setRoot("MenuFXML");}
         catch (IOException ex) {
@@ -105,11 +97,12 @@ public class SchakenController {
         beginx = (int) model.getI(e.getX());
         beginy = (int) model.getJ(e.getY());
         model.getStukOp(eindx, eindy);
-        for (int i = 0; i < model.schaakbord.length; i++) {
-            Stukken[] stukkens = model.schaakbord[i];
+/*      for (int i = 0; i < model.schaakbord.length; i++) {
+          Stukken[] stukkens = model.schaakbord[i];
         }
+*/
         //Geeft de i,j coordinaat van de array weer
-        //System.out.println("Start" + ":" + "" + beginx + "," + beginy);
+//        System.out.println("Start" + ":" + "" + beginx + "," + beginy);
         stuk = model.getInhoud(beginx, beginy);
         model.neemStukOp(beginx, beginy);
         return model.getInhoud(beginx, beginy);
@@ -120,15 +113,15 @@ public class SchakenController {
      * (weergegeven in coordinaten van de array)
      * 
      * @param e mousevent
-     * @return Het i,j vakje van de array
      */
     public void eindCo(MouseEvent e){
         //System.out.println(stuk);
         eindx = (int) model.getI(e.getX());
         eindy = (int) model.getJ(e.getY());
         model.getStukOp(eindx, eindy);
+        
         //Geeft de i,j coordinaat van de array weer
-        //System.out.println("Einde" + ":" + "" + eindx + "," + eindy);
+//      System.out.println("Einde" + ":" + "" + eindx + "," + eindy);
         model.getInhoud(eindx,eindy);
 
         // Bij het effectief verplaatsen van het stuk werd geholpen door de neef van Katleen
@@ -146,9 +139,16 @@ public class SchakenController {
         } 
         else { 
             model.zetneer(stuk, beginx, beginy); //Zet op originele plaats
-        }
-        
-        
+        }  
     }
     
+    
+    public void Muziek(ActionEvent event){
+        
+        ClassLoader classLoader = getClass().getClassLoader();
+        URL test = classLoader.getResource("Muziek.mp3");
+        Media media = new Media(test.toString());
+        mediaplayer = new MediaPlayer(media);
+        mediaplayer.setAutoPlay(true);  
+    }
 }

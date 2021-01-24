@@ -5,6 +5,7 @@
 // Gemaakt tijdens vakantie toen array nog niet gekend was       //
 // Dit werd gebaseerd op de FXML                                 //
 // In klasse pionnen staat een toegepast voorbeeld in commentaar //
+// Wordt in het eindproduct niet meer gebruikt                   //
 // Gemaakt door MATHIAS                                          //
 ///////////////////////////////////////////////////////////////////
 

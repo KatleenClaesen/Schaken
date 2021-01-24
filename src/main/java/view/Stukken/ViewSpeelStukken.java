@@ -24,37 +24,37 @@ import javafx.scene.shape.Circle;
 
 class ViewSpeelStukken extends Region{
     
-    private static final String Marengo = "Paard.png";
-    private static final String Pionetje = "Pion.png";
-    private static final String King = "Koning.png";
-    private static final String Bohemian_Rhapsody = "Queen.png";
-    private static final String HardLoper = "Loper.png";
-    private static final String SiegeTower = "Toren.png";
+    private static final String marengo = "Paard.png";
+    private static final String pionetje = "Pion.png";
+    private static final String king = "Koning.png";
+    private static final String bohemian_Rhapsody = "Queen.png";
+    private static final String hardLoper = "Loper.png";
+    private static final String siegeTower = "Toren.png";
     
     public static Node createNode(Stukken stuk){
         if(stuk instanceof Paard){ 
             
-            return new StukView((Paard)stuk ,Marengo, stuk.speler);
+            return new StukView((Paard)stuk ,marengo, stuk.speler);
         }
         else if(stuk instanceof Pion){
             
-            return new StukView((Pion)stuk ,Pionetje, stuk.speler);
+            return new StukView((Pion)stuk ,pionetje, stuk.speler);
         }
         else if(stuk instanceof Koning){
             
-            return new StukView((Koning)stuk ,King, stuk.speler);
+            return new StukView((Koning)stuk ,king, stuk.speler);
         }
         else if(stuk instanceof Queen){
             
-            return new StukView((Queen)stuk ,Bohemian_Rhapsody, stuk.speler);
+            return new StukView((Queen)stuk ,bohemian_Rhapsody, stuk.speler);
         }
         else if(stuk instanceof Loper){
             
-            return new StukView((Loper)stuk ,HardLoper, stuk.speler);
+            return new StukView((Loper)stuk ,hardLoper, stuk.speler);
         }
         else if(stuk instanceof Toren){
             
-            return new StukView((Toren)stuk,SiegeTower, stuk.speler);
+            return new StukView((Toren)stuk,siegeTower, stuk.speler);
         }
         return new Circle(0,0,0);
        

@@ -2,7 +2,7 @@
 package Stukken.model;
 
 import Bewegen.Beweging;
-import Speler.model.EnumSpeler;
+import Bord.model.EnumSpeler;
 
 /**
  * De abstracte klasse als verzameling voor alle speelstukkken
@@ -85,7 +85,7 @@ public abstract class Stukken {
     public boolean geldigeZet(int beginx, int beginy, int eindx, int eindy){
         boolean geldig = true;
         if (beginx == eindx && beginy == eindy){
-            System.out.println("Je hebt niet verplaatst");
+//            System.out.println("Je hebt niet verplaatst");
             geldig = false;     
         }
         return geldig;
@@ -103,7 +103,7 @@ public abstract class Stukken {
     public boolean binnenBord(int beginx, int beginy, int eindx, int eindy){
         boolean inBord = true;
         if(eindx > 8 && eindx < -1 && eindy >8 && eindy < -1){
-            System.out.println("Je bent buiten het bord");
+//            System.out.println("Je bent buiten het bord");
             inBord = false;
         }
         return inBord;

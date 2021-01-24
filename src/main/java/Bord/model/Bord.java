@@ -1,43 +1,37 @@
 package Bord.model;
 
-import Speler.model.EnumSpeler;
 import Stukken.model.EnumTypes;
 import Stukken.model.Stukken;
 import Stukken.model.Toren;
-import java.util.HashSet;
-import view.Stukken.*;
 import Stukken.model.*;
 import static view.Stukken.BordView.SIZE;
 
 
 /**
  * Het model van het speelbord
+ * 
  * @author Katleen
  */
 public class Bord {
     
-    public static Stukken[][] schaakbord;
-    private EnumSpeler speler;
-    private int speelstuk;
-    private EnumTypes type;
-    
-    
-    //reset het bord
-
-    
+    public static Stukken[][] schaakbord; //moet public zijn voor in controler
+    private int x;
+        
     /**
      * Constructor voor het schaakbord
      */
     public Bord(){
         schaakbord = new Stukken[8][8];
-        //LeegBord();
         ZetStukken();
     }
    
     
-    
+    /**
+     * Zet alle stukken op het bord
+     * 
+     * De basis voor deze methode komt van https://www.geeksforgeeks.org/design-a-chess-game/
+     */
     public void ZetStukken(){
-        int x;
         for(x=0; x<8; x++){
             schaakbord[x][6]= new Pion(EnumSpeler.WIT, EnumTypes.PION);
         }
@@ -62,8 +56,10 @@ public class Bord {
         schaakbord[6][7]= new Paard(EnumSpeler.WIT, EnumTypes.PAARD);
         schaakbord[7][7]= new Toren(EnumSpeler.WIT, EnumTypes.TOREN);
     }
+    
+    
     /**
-     * Krijg vakje op array-bord
+     * Kijk of het vakje op het bord ligt
      * 
      * @param i x-coordinaat op array-bord
      * @param j y-coordinaat op array-bord
@@ -77,7 +73,9 @@ public class Bord {
          return schaakbord[i][j];
 
        }
-  /**
+    
+    
+    /**
      * Geef de I-coordinaat van de array
      * 
      * @param x de schermcoordinaat x (double)
@@ -110,7 +108,7 @@ public class Bord {
     public void getStukOp(int x, int y){
         if (schaakbord[x][y] instanceof Stukken){
             getInhoud(x,y);
-            System.out.println("Stuk" + ":" + "" + getInhoud(x,y) + "" + "gelukt");
+//            System.out.println("Stuk" + ":" + "" + getInhoud(x,y) + "" + "gelukt");
         } 
     }
 
